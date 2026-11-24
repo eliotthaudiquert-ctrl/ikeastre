@@ -1,0 +1,173 @@
+{
+  "titre": "Veille stratégique · Session 1",
+  "sous_titre": "Magasins IKEA compacts × jeunes adultes (18-29 ans) · France, horizon 2030",
+  "date": "24/11/2026",
+  "angle": "Regard MARKET d'abord : cible, concurrence, différenciation, attractivité du projet.",
+  "contexte": {
+    "texte": "IKEA France a ouvert son premier magasin compact à Limoges le 27 mai 2026, en prépare un au Mans, et vise 10 magasins compacts supplémentaires d'ici 2030. Notre projet part de ce format pour rapprocher la marque des jeunes adultes. La couche digitale de l'expérience reste à définir : la veille sert aussi à choisir laquelle.",
+    "source": {"organisme": "IKEA France", "titre": "ChooseFrance 2026 : IKEA France accélère son développement omnicanal (communiqué)", "date": "01/06/2026", "url": "https://www.ikea.com/fr/fr/files/pdf/1f/03/1f03faa1/fr_pressrelease_choosefrance_fy26.pdf", "extrait": "l'objectif d'ouvrir 10 magasins compacts supplémentaires d'ici 2030"}
+  },
+  "lignes": [
+    {
+      "champ": "Tendances lourdes",
+      "nature": "Tendance documentée",
+      "info": "Les jeunes déménagent souvent : près de 8 ménages de moins de 30 ans sur 10 vivent dans leur logement depuis moins de 4 ans.",
+      "source": {"organisme": "Insee", "titre": "Conditions de logement début 2024 (Insee Première n° 2090)", "date": "21/01/2026", "url": "https://www.insee.fr/fr/statistiques/8727513", "extrait": "79 % des ménages dont la personne de référence a moins de 30 ans habitent dans leur logement depuis moins de quatre ans"},
+      "critique": "Source publique de référence, récente (enquête Logement 2023-2024). Limite : on parle de ménages, donc les jeunes encore chez leurs parents ne sont pas comptés.",
+      "impact": "Le besoin de s'équiper revient à chaque déménagement. Un magasin proche peut devenir le point de contact récurrent, du premier studio à la colocation suivante.",
+      "question": "Combien de déménagements entre 18 et 29 ans, et que rachète-t-on à chaque fois ?"
+    },
+    {
+      "champ": "Tendances lourdes",
+      "nature": "Tendance documentée",
+      "info": "Le marché du meuble neuf recule pour la deuxième année : 13,6 Md€ en 2025 (-1,8 %), après -5,1 % en 2024.",
+      "source": {"organisme": "IPEA / L'Ameublement français", "titre": "Dossier de presse Filière Meuble (Meubloscope 2026)", "date": "03/02/2026", "url": "https://www.ameublement.com/uploads/attachments/confrence-ameublement-26---dossier-de-presse-v30012026.pdf", "extrait": "Les ventes reculent de 1,8% soit une perte de chiffre d'affaires de l'ordre de 250 millions d'euros"},
+      "critique": "Institut sectoriel reconnu, données annuelles. Le chiffre couvre tout le meuble, pas seulement la cible jeune.",
+      "impact": "Dans un marché qui se contracte, le magasin compact doit se justifier par la proximité et le coût complet (transport compris), pas par l'étendue de la gamme.",
+      "question": "Quelle part des achats de meubles est faite par les 18-29 ans ?"
+    },
+    {
+      "champ": "Tendances lourdes",
+      "nature": "Tendance documentée",
+      "info": "L'occasion s'installe dans le meuble : environ un meuble sur quatre vendu en France serait d'occasion.",
+      "source": {"organisme": "Xerfi (citant des estimations IPEA)", "titre": "La seconde main redessine le marché du meuble", "date": "31/08/2026", "url": "https://www.xerfi.com/blog/la-seconde-main-redessine-le-marche-du-meuble_2433", "extrait": "un meuble sur quatre vendu en France est aujourd'hui d'occasion"},
+      "critique": "Estimation reprise de seconde main : l'étude IPEA d'origine n'est pas en accès libre, et on ne sait pas si c'est en volume ou en valeur. À corroborer.",
+      "impact": "Le vrai concurrent du neuf pour un jeune, c'est Leboncoin. Le magasin compact peut intégrer la reprise et la revente d'occasion pour rester dans le parcours.",
+      "question": "Retrouver l'étude IPEA d'origine (volume ou valeur ?)."
+    },
+    {
+      "champ": "Tendances lourdes",
+      "nature": "Tendance documentée",
+      "info": "Le commerce en ligne continue de croître : 196,4 Md€ en 2025 (+7 %) et 3,2 milliards de transactions.",
+      "source": {"organisme": "Fevad, repris par KPMG France", "titre": "Commerce agentique : l'IA redéfinit l'e-commerce (communiqué Fevad/KPMG)", "date": "09/2026", "url": "https://kpmg.com/fr/fr/media/press-releases/2026/09/e-commerce-ia-agentique.html", "extrait": "196,4 milliards d’euros de chiffre d’affaires (+7 %) et 3,2 milliards de transactions en ligne en 2025"},
+      "critique": "Chiffre de la fédération du secteur, corroboré par la presse (CB News, 11/02/2026). Tous produits confondus, pas spécifique au meuble.",
+      "impact": "Le magasin compact ne peut pas tout stocker : il doit fonctionner avec le site (commande en ligne, retrait, livraison). C'est d'ailleurs l'angle « omnicanal » annoncé par IKEA.",
+      "question": "Quelle part des ventes IKEA France passe par le digital ?"
+    },
+    {
+      "champ": "Tendances lourdes",
+      "nature": "Tendance documentée",
+      "info": "Les concurrents passent aussi aux petits formats : But ouvre des magasins de 1 200 à 1 500 m² dans des villes dès 7 000 habitants, mais en périphérie.",
+      "source": {"organisme": "Franchise Magazine (interview de la directrice du développement But Conforama)", "titre": "Réseaux équipement maison : But Conforama", "date": "30/04/2026", "url": "https://www.franchise-magazine.com/news-franchise/reseaux-equipement-maison-but-conforama-avril-2026", "extrait": "1 200 à 1 500 m²"},
+      "critique": "Parole de l'enseigne elle-même, dans un média spécialisé : c'est une intention, pas un bilan. Relevé et contrôlé par notre agent Fika le 05/11/2026.",
+      "impact": "Le petit format n'est pas un avantage en soi : But a déjà deux magasins au Mans, où IKEA prépare son compact. IKEA doit se différencier par la marque, le design accessible et le service, sinon il devient un But de plus.",
+      "question": "Où sont les magasins compacts IKEA par rapport aux But et Action des mêmes villes ?"
+    },
+    {
+      "champ": "Innovations",
+      "nature": "Tendance documentée",
+      "info": "IKEA propose déjà IKEA Kreativ, un outil gratuit qui permet de scanner sa pièce et d'y tester des meubles en virtuel.",
+      "source": {"organisme": "IKEA France", "titre": "IKEA Kreativ (page Conception)", "date": "consulté le 24/11/2026", "url": "https://www.ikea.com/fr/fr/home-design/", "extrait": "Testez des produits qui correspondent à votre budget et à votre style dans une pièce virtuelle réaliste ou en scannant votre propre espace"},
+      "critique": "Source de la marque, donc promotionnelle. Aucun chiffre d'usage public : on ne sait pas si les jeunes l'utilisent.",
+      "impact": "C'est la passerelle digitale toute trouvée : un magasin compact expose peu, mais un client qui arrive avec le scan de sa chambre peut voir le reste de la gamme dans son espace.",
+      "question": "Taux d'usage de Kreativ chez les 18-29 ans ? Fonctionne-t-il bien sur smartphone ?"
+    },
+    {
+      "champ": "Durabilité",
+      "nature": "Tendance documentée",
+      "info": "Ce sont les appareils, et surtout leur fabrication, qui pèsent le plus dans l'empreinte carbone du numérique, loin devant les data centers et les réseaux.",
+      "source": {"organisme": "Arcep (citant l'étude ADEME-Arcep)", "titre": "Équipements et usages numériques : comment limiter mon impact (fiche pratique)", "date": "consulté le 24/11/2026", "url": "https://www.arcep.fr/mes-demarches-et-services/consommateurs/fiches-pratiques/equipements-et-usages-numeriques-comment-limiter-mon-impact-environnemental-au-quotidien.html", "extrait": "79 %, contre 16 % pour les datacenters et 5 % pour les réseaux"},
+      "critique": "Source publique solide, mais la répartition a été revue en janvier 2025 (data centers à l'étranger inclus) et une autre source donne 50 % pour les terminaux. On retient l'ordre de grandeur, pas le chiffre exact.",
+      "impact": "Éco-concevoir, c'est éviter de remplir le magasin d'écrans et de bornes neufs : mieux vaut s'appuyer sur le smartphone du client et une appli légère qui tourne sur un vieux téléphone.",
+      "question": "Lire la mise à jour ADEME-Arcep de janvier 2025 pour le chiffre actuel."
+    },
+    {
+      "champ": "Durabilité",
+      "nature": "Tendance documentée",
+      "info": "IKEA rachète déjà les meubles IKEA usagés contre un bon d'achat et les revend dans un espace seconde vie en magasin.",
+      "source": {"organisme": "IKEA France", "titre": "Reprise de vos articles usagés (page service)", "date": "consulté le 06/11/2026", "url": "https://www.ikea.com/fr/fr/customer-service/services/removal/", "extrait": "Nous reprenons, sans achat, votre article usagé en magasin"},
+      "critique": "Source de la marque, à jour. Elle décrit le service mais pas son volume ni son succès.",
+      "impact": "Le magasin compact peut devenir le point de reprise de quartier : on rapporte l'ancien meuble en venant chercher le nouveau, sans voiture si c'est proche.",
+      "question": "Le service de reprise est-il prévu dans les magasins compacts (place, logistique) ?"
+    },
+    {
+      "champ": "Accessibilité",
+      "nature": "Obligation légale",
+      "info": "Depuis le 28 juin 2025, la directive européenne sur l'accessibilité impose que le commerce en ligne soit accessible aux personnes handicapées.",
+      "source": {"organisme": "Entreprendre Service-Public (DILA)", "titre": "Accessibilité des produits et services : ce qui change", "date": "27/11/2025", "url": "https://entreprendre.service-public.gouv.fr/actualites/A18669", "extrait": "La directive, qui a été transposée en droit français, s’applique depuis le 28 juin 2025"},
+      "critique": "Source officielle, claire. Elle ne détaille pas les normes techniques à respecter : il faut les chercher dans le référentiel (RGAA / norme européenne).",
+      "impact": "Toute brique digitale du magasin compact (site, appli, réservation, bornes) doit être accessible dès sa conception : c'est un coût à prévoir dans le budget, pas une option.",
+      "question": "Les bornes en magasin sont-elles concernées, et à partir de quand ?"
+    },
+    {
+      "champ": "Inclusion",
+      "nature": "Tendance documentée",
+      "info": "Selon la définition retenue, la France compte entre 5,7 et 18,2 millions de personnes handicapées de 5 ans ou plus.",
+      "source": {"organisme": "DREES", "titre": "Le handicap en chiffres, édition 2024", "date": "28/11/2024", "url": "https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse-documents-de-reference/panoramas-de-la-drees/241128_Panorama_Handicap2024", "extrait": "varie de 5,7 millions à 18,2 millions de personnes selon la définition utilisée"},
+      "critique": "Statistique publique de référence. L'écart montre qu'il n'y a pas de « chiffre officiel » : il faut citer la fourchette, pas un seul chiffre.",
+      "impact": "Un magasin compact a des allées plus étroites et moins de place : la circulation en fauteuil, la signalétique et l'aide au portage doivent être pensées dès le plan.",
+      "question": "Quelles normes d'accessibilité s'appliquent à un magasin de cette taille ?"
+    },
+    {
+      "champ": "Inclusion",
+      "nature": "Tendance documentée",
+      "info": "Plus d'un tiers des ménages de moins de 30 ans n'ont pas de voiture (64,2 % en ont au moins une).",
+      "source": {"organisme": "Insee", "titre": "Équipement des ménages en voiture, données annuelles 2023", "date": "25/06/2026", "url": "https://www.insee.fr/fr/statistiques/8670751", "extrait": "64,2"},
+      "critique": "Source publique fiable. Le « plus d'un tiers » est déduit (100 - 64,2). Données par ménage, pas par personne.",
+      "impact": "C'est le public le plus à risque d'être oublié : un magasin compact en zone commerciale reste difficile d'accès sans voiture. Transport en commun, livraison et retrait doivent être pensés pour eux.",
+      "question": "Les magasins de Limoges et du Mans sont-ils desservis en transports en commun ?"
+    },
+    {
+      "champ": "Évolutions des usages",
+      "nature": "Tendance documentée",
+      "info": "L'IA générative entre dans le parcours d'achat : 31 % des cyberacheteurs l'utilisent déjà pour leurs achats en ligne, 73 % parmi les utilisateurs réguliers de l'IA.",
+      "source": {"organisme": "Fevad / Odoxa, repris par KPMG France", "titre": "Commerce agentique : l'IA redéfinit l'e-commerce (communiqué)", "date": "09/2026", "url": "https://kpmg.com/fr/fr/media/press-releases/2026/09/e-commerce-ia-agentique.html", "extrait": "31 % des cyberacheteurs utilisent déjà l’IA générative pour leurs achats en ligne"},
+      "critique": "Étude commandée par la fédération du e-commerce, qui a intérêt à montrer la croissance. Échantillon et méthode à vérifier dans l'étude complète.",
+      "impact": "Les jeunes préparent leurs achats en demandant à une IA. Il faut que les produits et le magasin compact le plus proche remontent dans ces réponses (fiches produit claires, stock visible).",
+      "question": "Quelle part chez les 18-29 ans ? Lire l'étude Fevad/Odoxa complète."
+    },
+    {
+      "champ": "Évolutions des usages",
+      "nature": "Tendance documentée",
+      "info": "Chez les 16-25 ans, Instagram (76 %), Snapchat (63 %) et TikTok (60 %) sont les réseaux les plus utilisés.",
+      "source": {"organisme": "Diplomeo, avec le Blog du Modérateur", "titre": "Réseaux sociaux : les habitudes des 16-25 ans", "date": "20/03/2025", "url": "https://diplomeo.com/actualite-sondage_reseaux_sociaux_jeunes_2025", "extrait": "La plateforme de Meta atteint 76 % d'utilisateurs"},
+      "critique": "Fragile : sondage auprès de 444 jeunes, non représentatif. À croiser avec une étude plus large (Médiamétrie, Baromètre du numérique).",
+      "impact": "La découverte du magasin compact passera par ces réseaux : c'est là que doit vivre la campagne (« Trouve ton IKEA le plus proche »).",
+      "question": "Trouver une source représentative sur les usages des 18-29 ans."
+    },
+    {
+      "champ": "Réglementation",
+      "nature": "Obligation légale",
+      "info": "Depuis le 2 août 2026, l'AI Act oblige à prévenir clairement l'utilisateur quand il échange avec une IA (chatbot, agent, avatar) et non avec une personne.",
+      "source": {"organisme": "Commission européenne", "titre": "Safer and more transparent AI", "date": "02/08/2026", "url": "https://commission.europa.eu/news-and-media/news/safer-and-more-transparent-ai-2026-08-02_en", "extrait": "Users must be clearly informed when they are not interacting with a real person, but an AI system, for example a chatbot, AI agent, and avatar"},
+      "critique": "Source officielle, en vigueur. Les obligations pour les IA « à haut risque » sont reportées : bien distinguer ce qui s'applique déjà de ce qui arrive.",
+      "impact": "Un assistant IA pour préparer sa visite ou son plan doit s'annoncer comme IA. À combiner avec le RGPD si on utilise la localisation pour trouver le magasin le plus proche.",
+      "question": "Quelles règles CNIL pour la géolocalisation dans une appli de magasin ?"
+    },
+    {
+      "champ": "Signaux faibles",
+      "nature": "Signal faible",
+      "info": "Le social commerce arrive en France : TikTok Shop permet d'acheter directement dans l'appli depuis le 31 mars 2025.",
+      "source": {"organisme": "TikTok (newsroom)", "titre": "TikTok Shop débarque en France", "date": "03/2025", "url": "https://newsroom.tiktok.com/ouverture-tiktok-shop-france-2025?lang=fr", "extrait": "s’implante en France dès le 31 mars 2025"},
+      "critique": "Source de la plateforme elle-même, donc enthousiaste. Lancement confirmé par la presse, mais aucun chiffre public sur l'ameublement.",
+      "impact": "Si l'achat se fait dans TikTok, le magasin compact peut devenir le lieu de retrait ou d'essai de ce qu'on a vu en vidéo.",
+      "question": "Des enseignes de meuble vendent-elles déjà sur TikTok Shop en France ?"
+    },
+    {
+      "champ": "Signaux faibles",
+      "nature": "Signal faible",
+      "info": "Le commerce par agents IA (l'IA qui choisit et commande à notre place) n'est pas encore disponible en France. Les agents envoient moins de 5 % du trafic vers les sites marchands, mais cela pourrait monter à près de 25 % d'ici 2030.",
+      "source": {"organisme": "Autorité de la concurrence", "titre": "Avis n° 26-A-05 sur le secteur des agents d'intelligence artificielle", "date": "17/07/2026", "url": "https://www.autoritedelaconcurrence.fr/sites/default/files/integral_texts/2026-07/Avis_26a05_ADLC_compressed.pdf", "extrait": "ne soient pas disponibles sur le marché français au jour de la"},
+      "critique": "Autorité publique indépendante, très récent. Le 25 % en 2030 est une projection, pas une mesure.",
+      "impact": "À horizon 2030, une partie des clients pourrait passer par un agent IA plutôt que par le site : stock et prix du magasin compact doivent être lisibles par ces agents.",
+      "question": "Suivre les lancements en France (OpenAI, Google) en 2027."
+    },
+    {
+      "champ": "Signaux faibles",
+      "nature": "Signal faible",
+      "info": "IKEA teste une place de marché d'occasion entre particuliers (IKEA Preowned) : lancée à Oslo et Madrid à l'été 2024, puis étendue à toute la Norvège et l'Espagne.",
+      "source": {"organisme": "RetailDetail", "titre": "Ikea to roll out second-hand marketplace across Europe", "date": "29/01/2025", "url": "https://www.retaildetail.eu/news/home/ikea-to-roll-out-second-hand-marketplace-across-europe/", "extrait": "We have decided to expand it from Madrid to Spain, and from Oslo to Nor"},
+      "critique": "Média retail spécialisé qui cite le PDG d'Ingka. D'autres pays ont suivi depuis, mais nous n'avons pas trouvé de date de lancement en France.",
+      "impact": "Si Preowned arrive en France, le magasin compact peut servir de point de remise entre particuliers : un usage qui fait revenir en magasin.",
+      "question": "Preowned est-il prévu en France ? Chercher un communiqué Ingka."
+    }
+  ],
+  "a_creuser": [
+    "Définir la brique digitale du magasin compact (scan Kreativ, retrait de commande, reprise, assistant IA) : c'est elle qui fait de notre projet une « expérience digitale 2030 ».",
+    "Accès des magasins de Limoges et du Mans sans voiture (transports, distance du centre-ville).",
+    "Part des 18-29 ans dans les achats de meubles et dans l'usage de l'IA pour acheter.",
+    "Chiffre à jour de l'empreinte du numérique (mise à jour ADEME-Arcep de janvier 2025).",
+    "Source représentative sur les réseaux sociaux des 18-29 ans, pour remplacer le sondage Diplomeo.",
+    "Normes d'accessibilité applicables à un magasin compact et à ses bornes."
+  ]
+}

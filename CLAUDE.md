@@ -2,6 +2,9 @@
 
 Ce fichier est lu par le Claude de chaque membre de l'équipe. Il sert de mémoire commune : **c'est la source de vérité sur l'état du projet**.
 
+## Cours en cours
+Veille stratégique, business model & arbitrages budgétaires (B3, 2026-27) : dossier PFR Bloc 1 de 10 à 12 pages, en PDF et en groupe (veille, synthèse décisionnelle, business model, budget en 2 scénarios « minimal viable » et « ambitieux », arbitrages, recommandations). Session 1 faite (voir `09 Veille stratégique`).
+
 ## Équipe
 Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique indépendant, non affilié à IKEA.
 
@@ -28,6 +31,7 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 | `06 Atelier brief déconstruit` | Slide de l'atelier (HTML, PDF, PNG) |
 | `07 Agent IA` | Agent de recherche « Fika » : missions vérification + veille, livrables Excel, slides, vidéo. Voir son `LISEZ-MOI.md` |
 | `08 Segmentation` | Segmentation Gen Z (PDF + slides HTML + corpus chiffres/verbatims sourcés) |
+| `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits |
 | `IKEA - Envoi livrables PFR` | Les livrables PFR envoyés le 23/11/2026 |
 
 Pas dans le dépôt (droits ou poids) : reel d'inspiration, rushs et bruitages Mixkit bruts, fichiers .wav, doublons. Le rendu vidéo final, lui, est bien là.
@@ -45,6 +49,7 @@ Pas dans le dépôt (droits ou poids) : reel d'inspiration, rushs et bruitages M
 Livrables de campagne sans responsable attribué (au 03/11) : affiche, carrousel, vidéo, X, indicateurs, conformité, sources, mention IA. À répartir.
 
 ## Journal
+- 24/11/2026 · Eliott : veille stratégique Session 1 (17 informations, 8 champs sur 8, sources contrôlées) dans `09 Veille stratégique`. Concept retenu : magasins compacts. Brique digitale encore à définir.
 - 24/11/2026 · Eliott : création du dépôt commun.
 - 23/11/2026 · Eliott : envoi à Loris des livrables 01, 02, 03 et du dossier stratégique.
 - 05/11/2026 · Eliott : agent Fika (missions 1 et 2 passées au contrôle), dossier IKEA unifié.
