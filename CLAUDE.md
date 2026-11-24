@@ -10,7 +10,7 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 
 ## Règle de synchro (pour chaque Claude)
 1. **Avant de travailler** : `git pull` (ou double-clic sur `Synchroniser.cmd`).
-2. **Après une modif** : mettre à jour la section « Journal » plus bas (date, qui, quoi), puis commit + push (ou `Synchroniser.cmd`).
+2. **Après une modif** : mettre à jour `avancement.js` (état du livrable, prochaine étape, une ligne en tête du `journal` avec date, qui, quoi, et la date `maj`), puis commit + push (ou `Synchroniser.cmd`).
 3. Un livrable validé par l'équipe est verrouillé : on n'y touche plus sans accord des trois.
 4. Ne jamais supprimer le travail d'un autre membre. En cas de conflit git, demander avant d'écraser.
 
@@ -33,25 +33,10 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 | `08 Segmentation` | Segmentation Gen Z (PDF + slides HTML + corpus chiffres/verbatims sourcés) ; `Première version (12-10-2026)` = 1re segmentation du marché IKEA (PPTX + PDF) |
 | `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits |
 | `10 Hypothèses clients` | Fiche d'hypothèses tirées d'avis en ligne (HTML, imprimable), aucune validée : à tester auprès de vrais clients |
+| `Avancement.html` + `avancement.js` | Page d'avancement du projet et ses données |
 | `IKEA - Envoi livrables PFR` | Les livrables PFR envoyés le 23/11/2026 |
 
 Pas dans le dépôt (droits ou poids) : reel d'inspiration, rushs et bruitages Mixkit bruts, fichiers .wav, doublons. Le rendu vidéo final, lui, est bien là.
 
-## État des livrables PFR (au 24/11/2026)
-| # | Livrable | État |
-|---|---|---|
-| 01 | Segmentation | Fait (`IKEA - Envoi livrables PFR`) |
-| 02 | Personas | Fait |
-| 03 | Veille concurrentielle sourcée | Fait (Excel issu de l'agent Fika) |
-| 04 | Positionnement | Pas de version dédiée : couvert en partie par le dossier stratégique (mapping p. 6-7) |
-| 05-06 | Canvas, promesse | Dans le dossier stratégique (canvas p. 12, promesse p. 13) |
-| 07 | Note d'arbitrage | **À faire** : pas de version dédiée |
-
-Livrables de campagne sans responsable attribué (au 03/11) : affiche, carrousel, vidéo, X, indicateurs, conformité, sources, mention IA. À répartir.
-
-## Journal
-- 24/11/2026 · Tobias : ajout de la première segmentation (12/10, PPTX + PDF) dans `08 Segmentation/Première version (12-10-2026)` et de la fiche hypothèses dans `10 Hypothèses clients`.
-- 24/11/2026 · Eliott : veille stratégique Session 1 (17 informations, 8 champs sur 8, sources contrôlées) dans `09 Veille stratégique`. Concept retenu : magasins compacts. Brique digitale encore à définir.
-- 24/11/2026 · Eliott : création du dépôt commun.
-- 23/11/2026 · Eliott : envoi à Loris des livrables 01, 02, 03 et du dossier stratégique.
-- 05/11/2026 · Eliott : agent Fika (missions 1 et 2 passées au contrôle), dossier IKEA unifié.
+## Avancement et journal
+L'état de tous les livrables, la prochaine étape, ce qui est en attente et le journal sont dans **`avancement.js`**, affiché par **`Avancement.html`** (double-clic pour voir où on en est). C'est la seule source pour l'avancement : ne pas recopier ces infos ici.

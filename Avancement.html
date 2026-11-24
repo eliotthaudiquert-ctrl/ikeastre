@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IKÉASTRE · Avancement du projet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --noir: #111; --gris-texte: #484848; --gris-doux: #767676; --filet: #dfdfdf; --fond: #f5f5f5;
+  --bleu: #0058a3; --jaune: #ffdb00; --orange: #ca5008; --vert: #0a8a00;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans', Arial, sans-serif; color: var(--noir); background: #fff; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+
+.topbar { background: var(--noir); color: #fff; font-size: 12px; }
+.topbar .wrap { height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.topbar .maj { display: flex; align-items: center; gap: 8px; }
+.topbar .maj::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--jaune); flex: none; }
+.nav .wrap { height: 64px; display: flex; align-items: center; gap: 28px; }
+.nav img { height: 30px; display: block; }
+.crumbs { font-size: 13px; color: var(--gris-texte); display: flex; gap: 8px; }
+.crumbs span + span::before { content: "›"; margin-right: 8px; color: var(--gris-doux); }
+.crumbs span:last-child { color: var(--noir); font-weight: 600; }
+
+.hero { padding: 28px 0 8px; display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: center; }
+h1 { font-size: 52px; font-weight: 800; letter-spacing: -1px; line-height: 1.05; }
+.compteurs { display: flex; gap: 22px; margin-top: 18px; flex-wrap: wrap; }
+.compteur b { display: block; font-size: 30px; font-weight: 800; line-height: 1; }
+.compteur span { font-size: 13px; color: var(--gris-texte); }
+.prochaine { background: var(--jaune); padding: 22px 24px; border-radius: 4px; }
+.prochaine .eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+.prochaine h2 { font-size: 21px; font-weight: 800; line-height: 1.2; margin: 6px 0 8px; letter-spacing: -.2px; }
+.prochaine p { font-size: 13.5px; }
+.prochaine .qui { margin-top: 10px; font-size: 12.5px; font-weight: 700; }
+
+section { padding: 40px 0 0; }
+.titre-section { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--noir); padding-bottom: 10px; margin-bottom: 4px; }
+.titre-section h2 { font-size: 22px; font-weight: 800; letter-spacing: -.3px; }
+.titre-section .ratio { font-size: 13px; color: var(--gris-texte); white-space: nowrap; }
+.sous { font-size: 13.5px; color: var(--gris-texte); margin: 10px 0 18px; }
+
+.barre { height: 6px; background: var(--fond); border-radius: 3px; overflow: hidden; margin: 6px 0 22px; }
+.barre i { display: block; height: 100%; background: var(--bleu); }
+
+.etapes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+.etape { padding: 16px 18px 18px 0; border-top: 4px solid var(--filet); position: relative; }
+.etape + .etape { padding-left: 18px; }
+.etape.fait { border-top-color: var(--bleu); }
+.etape.en-cours { border-top-color: var(--jaune); }
+.etape .session { font-size: 12px; color: var(--gris-doux); font-weight: 600; }
+.etape h3 { font-size: 16.5px; font-weight: 800; margin: 3px 0 6px; line-height: 1.2; }
+.etape p { font-size: 13px; color: var(--gris-texte); }
+
+.etat { font-size: 12.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.etat::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.etat.fait { color: var(--vert); }
+.etat.en-cours { color: var(--bleu); }
+.etat.a-faire { color: var(--gris-doux); }
+.etat.a-confirmer { color: var(--orange); }
+.etape .etat { margin-top: 10px; }
+
+.liens { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.btn { font-size: 12.5px; font-weight: 700; text-decoration: none; border: 1.5px solid var(--noir); border-radius: 64px; padding: 4px 12px; }
+.btn:hover { background: var(--noir); color: #fff; }
+
+.deux { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.liste { list-style: none; }
+.liste li { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--filet); }
+.liste .t { font-size: 14.5px; font-weight: 600; }
+.liste .t .num { color: var(--gris-doux); font-weight: 700; margin-right: 8px; font-variant-numeric: tabular-nums; }
+.liste .t a { text-decoration: none; border-bottom: 1px solid var(--filet); }
+.liste .t a:hover { border-bottom-color: var(--noir); }
+.liste .note { grid-column: 1 / -1; font-size: 12.5px; color: var(--gris-texte); margin-top: -2px; }
+.liste .qui { font-size: 12.5px; color: var(--gris-texte); white-space: nowrap; }
+
+.docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; margin-top: 16px; }
+.docs a { display: block; background: var(--fond); padding: 14px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; border-radius: 4px; }
+.docs a:hover { background: #ebebeb; }
+.docs a small { display: block; font-size: 11.5px; font-weight: 400; color: var(--gris-doux); margin-top: 2px; }
+
+.journal li { grid-template-columns: 96px 1fr; align-items: start; }
+.journal .d { font-size: 12.5px; color: var(--gris-doux); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.journal .t { font-weight: 400; font-size: 14px; }
+.journal .t b { font-weight: 700; }
+
+footer { margin: 48px 0 0; border-top: 1px solid var(--filet); }
+footer .wrap { padding-top: 16px; padding-bottom: 32px; font-size: 12px; color: var(--gris-doux); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 20px; }
+  .topbar .wrap { height: auto; padding-top: 7px; padding-bottom: 7px; flex-direction: column; align-items: flex-start; gap: 2px; }
+  .nav .wrap { height: 56px; gap: 18px; }
+  .nav img { height: 24px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 16px; }
+  h1 { font-size: 38px; }
+  .etapes { grid-template-columns: 1fr; }
+  .etape, .etape + .etape { padding: 12px 0 14px 16px; border-top: 0; border-left: 4px solid var(--filet); }
+  .etape.fait { border-left-color: var(--bleu); }
+  .etape.en-cours { border-left-color: var(--jaune); }
+  .etape + .etape { margin-top: 6px; }
+  .deux { grid-template-columns: 1fr; gap: 0; }
+  .journal li { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Projet académique indépendant, non affilié à IKEA</span><span class="maj" id="maj"></span></div></div>
+<div class="nav"><div class="wrap"><img src="09 Veille stratégique/ikea-logo.png" alt="IKEA"><div class="crumbs"><span>IKÉASTRE</span><span>Avancement</span></div></div></div>
+
+<main class="wrap" id="app"></main>
+
+<footer><div class="wrap"><span>Données : <code>avancement.js</code>, mis à jour par chaque Claude après une modif</span><span>Loris · Tobias · Eliott · B3CPD Ynov</span></div></footer>
+
+<script src="avancement.js"></script>
+<script>
+(function () {
+  const A = window.AVANCEMENT;
+  const app = document.getElementById('app');
+  if (!A) { app.innerHTML = '<p style="padding:40px 0">Fichier avancement.js introuvable.</p>'; return; }
+
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+    .replace(/ (%|»|:|;|\?|!)/g, ' $1').replace(/« /g, '« ');
+  const cls = e => ({ 'fait': 'fait', 'en cours': 'en-cours', 'à faire': 'a-faire', 'à confirmer': 'a-confirmer' }[e] || 'a-faire');
+  const label = e => e.charAt(0).toUpperCase() + e.slice(1);
+  const etat = e => `<span class="etat ${cls(e)}">${esc(label(e))}</span>`;
+  const href = p => encodeURI(p).replace(/#/g, '%23');
+  const ratio = arr => `${arr.filter(x => x.etat === 'fait').length} sur ${arr.length} faits`;
+  const pct = arr => Math.round(100 * arr.filter(x => x.etat === 'fait').length / arr.length);
+  const ligne = x => `<li>
+      <span class="t">${x.num ? `<span class="num">${esc(x.num)}</span>` : ''}${x.lien ? `<a href="${href(x.lien)}">${esc(x.titre)}</a>` : esc(x.titre)}</span>
+      ${etat(x.etat)}
+      ${x.note ? `<span class="note">${esc(x.note)}</span>` : ''}
+    </li>`;
+
+  document.getElementById('maj').textContent = `Mis à jour le ${A.maj} par ${A.par}`;
+
+  const tout = [...A.cours.etapes, ...A.livrables, ...A.campagne];
+  const n = e => tout.filter(x => x.etat === e).length;
+
+  app.innerHTML = `
+    <div class="hero">
+      <div>
+        <h1>Où on en est.</h1>
+        <div class="compteurs">
+          <div class="compteur"><b>${n('fait')}</b><span>faits</span></div>
+          <div class="compteur"><b>${n('en cours')}</b><span>en cours</span></div>
+          <div class="compteur"><b>${n('à faire')}</b><span>à faire</span></div>
+          <div class="compteur"><b>${n('à confirmer')}</b><span>à confirmer</span></div>
+        </div>
+      </div>
+      <div class="prochaine">
+        <div class="eyebrow">Prochaine étape</div>
+        <h2>${esc(A.prochaine.titre)}</h2>
+        <p>${esc(A.prochaine.detail)}</p>
+        <div class="qui">${esc(A.prochaine.qui)}</div>
+      </div>
+    </div>
+
+    <section>
+      <div class="titre-section"><h2>Cours en cours : ${esc(A.cours.nom.split(',')[0])}</h2><span class="ratio">${ratio(A.cours.etapes)}</span></div>
+      <p class="sous">${esc(A.cours.rendu)}</p>
+      <div class="etapes">
+        ${A.cours.etapes.map(s => `<div class="etape ${cls(s.etat)}">
+          <div class="session">${esc(s.session)}</div>
+          <h3>${esc(s.titre)}</h3>
+          <p>${esc(s.detail)}</p>
+          ${etat(s.etat)}
+          ${s.liens ? `<div class="liens">${s.liens.map(([t, p]) => `<a class="btn" href="${href(p)}">${esc(t)}</a>`).join('')}</div>` : ''}
+        </div>`).join('')}
+      </div>
+    </section>
+
+    <div class="deux">
+      <section>
+        <div class="titre-section"><h2>Livrables PFR</h2><span class="ratio">${ratio(A.livrables)}</span></div>
+        <div class="barre"><i style="width:${pct(A.livrables)}%"></i></div>
+        <ul class="liste">${A.livrables.map(ligne).join('')}</ul>
+      </section>
+      <section>
+        <div class="titre-section"><h2>Campagne</h2><span class="ratio">${ratio(A.campagne)}</span></div>
+        <div class="barre"><i style="width:${pct(A.campagne)}%"></i></div>
+        <ul class="liste">${A.campagne.map(ligne).join('')}</ul>
+      </section>
+    </div>
+
+    <div class="deux">
+      <section>
+        <div class="titre-section"><h2>En attente</h2></div>
+        <ul class="liste">${A.attente.map(x => `<li><span class="t">${esc(x.quoi)}</span><span class="qui">${esc(x.qui)}</span></li>`).join('')}</ul>
+      </section>
+      <section>
+        <div class="titre-section"><h2>Journal</h2></div>
+        <ul class="liste journal">${A.journal.slice(0, 6).map(j => `<li><span class="d">${esc(j.date)}</span><span class="t"><b>${esc(j.qui)}</b> · ${esc(j.quoi)}</span></li>`).join('')}</ul>
+      </section>
+    </div>
+
+    <section>
+      <div class="titre-section"><h2>Documents de référence</h2></div>
+      <div class="docs">${A.documents.map(([t, p]) => `<a href="${href(p)}">${esc(t)}<small>${esc(p.split('/')[0])}</small></a>`).join('')}</div>
+    </section>
+  `;
+})();
+</script>
+</body>
+</html>
