@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiche hypothèses IKEA</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: #111; background: #fff; padding: 40px 20px; }
+  main { max-width: 1000px; margin: 0 auto; }
+  .canvas { background: #f3f0e9; border-radius: 16px; padding: 32px; margin-top: 36px; }
+  .canvas .source { font: 13px/1.4 ui-monospace, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: #2d6e66; }
+  .canvas .titre { font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 800; color: #141a1e; margin: 6px 0 22px; }
+  .canvas .grille { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: center; }
+  .canvas .carte { border-radius: 12px; padding: 20px; margin-bottom: 12px; background: #e8e6da; color: #30373b; }
+  .canvas .carte.noire { background: #141a1e; color: #e9e9e6; }
+  .canvas .kicker { font: 13px/1.4 ui-monospace, Menlo, monospace; color: #555b5f; }
+  .canvas .noire .kicker { color: #f07a4f; }
+  .canvas .nom { font-size: 24px; line-height: 1.2; font-weight: 700; margin: 2px 0 14px; color: #30373b; }
+  .canvas .noire .nom { color: #58b8ab; }
+  .canvas .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .canvas .trio h3 { font-size: 14px; line-height: 1.3; font-weight: 700; margin-bottom: 6px; }
+  .canvas .trio ul { margin: 0; }
+  .canvas .trio li { border: 0; padding: 0; margin-bottom: 6px; font-size: 14px; line-height: 1.35; }
+  .canvas .noire small { color: #a9aeb0; }
+  .canvas .adequation { font-size: 17px; color: #30373b; margin-top: 4px; }
+  .canvas .adequation strong { color: #141a1e; }
+  .canvas svg { width: 100%; height: auto; display: block; }
+  .canvas svg text { font: 800 25px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; text-anchor: middle; }
+  .canvas .legende { color: #555b5f; font-size: 13px; margin-top: 12px; }
+  .canvas .defile { overflow-x: auto; }
+  .canvas.mapping svg { min-width: 640px; }
+  .canvas.mapping svg text { font: 600 15px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; text-anchor: start; fill: #30373b; }
+  .canvas.mapping svg text.axe { font-size: 13px; font-weight: 500; fill: #555b5f; }
+  .canvas.mapping svg text.centre { text-anchor: middle; }
+  .canvas.mapping svg text.fin { text-anchor: end; }
+  .canvas.mapping svg text.ikea { font-size: 20px; font-weight: 800; fill: #141a1e; }
+  .canvas.mapping svg text.sans { font-weight: 500; fill: #555b5f; }
+  .canvas.mapping svg text.zone { fill: #a8492b; }
+  .canvas .requetes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .canvas .requete { background: #fff; border-radius: 12px; padding: 18px; }
+  .canvas .requete .numero { font: 13px/1.4 ui-monospace, Menlo, monospace; color: #2d6e66; }
+  .canvas .requete .texte { font-size: 17px; line-height: 1.3; font-weight: 700; color: #141a1e; margin: 4px 0 8px; }
+  .canvas .requete .teste { font-size: 14px; color: #30373b; }
+  .canvas .requete.noire { background: #141a1e; }
+  .canvas .requete.noire .texte { color: #fff; font-weight: 500; font-size: 15px; }
+  .canvas .requete.noire .numero { color: #f07a4f; }
+  @media (max-width: 800px) { .canvas .requetes { grid-template-columns: 1fr; } }
+  .canvas .pourquoi { margin-top: 18px; }
+  .canvas .pourquoi li { border: 0; padding: 0; margin-bottom: 6px; font-size: 14px; color: #30373b; }
+  @media (max-width: 800px) { .canvas { padding: 20px; } .canvas .grille, .canvas .trio { grid-template-columns: 1fr; } .canvas svg { max-width: 280px; margin: 0 auto; } }
+  h1 { font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; }
+  .intro { margin: 8px 0 28px; color: #444; }
+  h2 { font-size: 15px; background: #111; color: #fff; padding: 6px 12px; border-radius: 8px; margin: 24px 0 14px; }
+  ol { padding-left: 24px; }
+  ol > li { margin-bottom: 14px; font-weight: 700; }
+  ol > li > span { font-weight: 400; }
+  ul { list-style: none; padding: 0; margin-top: 6px; font-weight: 400; }
+  ul li { border-left: 3px solid #111; padding-left: 10px; margin-bottom: 4px; }
+  small { color: #555; font-size: 13px; }
+  @media print { body { padding: 0; } h2, .canvas, .canvas * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } ol > li, .canvas { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hypothèses IKEA</h1>
+  <p class="intro">Aucune n'est validée : ce sont des pistes tirées d'avis en ligne, à tester auprès de vrais clients.</p>
+
+  <h2>Plutôt étayées</h2>
+  <ol>
+    <li>Pour un gros projet, la confiance se joue sur la livraison plus que sur le produit.
+      <ul><li>« plusieurs jours de congés posés pour rien »</li><li>« Ne prenez surtout pas le service livraison IKEA »</li></ul></li>
+    <li>Le coût qui passe mal, c'est de récupérer le meuble, pas de l'acheter.
+      <ul><li>« on paye déjà 90 € la livraison »</li><li>« le click ans collect en magasin est payant »</li></ul></li>
+    <li>Les projets engageants, comme une cuisine, concentrent les frustrations.
+      <ul><li>« J'ai eu trois vendeur qui ce sont remplacés pour des raisons de planning »</li><li>« Nous avons attendu 1/2 journée »</li></ul></li>
+    <li>Au SAV, le problème n'est pas seulement la réponse apportée : c'est aussi de joindre quelqu'un.
+      <ul><li>« Impossible de joindre le SAV »</li><li>« on me bascule sur une IA qui me promène de questions en questions » <small>un seul avis sur l'IA, mais récent</small></li></ul></li>
+  </ol>
+
+  <h2>À creuser</h2>
+  <ol start="5">
+    <li>Le prix reste la raison d'acheter, mais cet avantage s'effrite.
+      <ul><li>« meubler son logement avec style sans se ruiner » <small>pour</small></li><li>« les prix on vachement augmenté » <small>contre</small></li></ul></li>
+    <li>Le montage n'est pas le vrai frein : les notices sont appréciées, c'est le temps qui pèse.
+      <ul><li>« Les notices de montage sont claires »</li><li>« Le montage demande parfois un peu de temps »</li></ul></li>
+    <li>La visite est à la fois un plaisir et une corvée, et le restaurant aide à faire passer sa longueur.
+      <ul><li>« assez long et parfois fatigant »</li><li>« un point fort pour bien finir son shoopping »</li></ul></li>
+  </ol>
+
+  <h2>Fragiles</h2>
+  <ol start="8">
+    <li>Les étudiants achètent surtout à la rentrée, poussés par les offres et avec l'aide de leurs parents.
+      <span><br>Repose sur les offres 2025 et un seul avis d'étudiant.</span></li>
+    <li>Les jeunes comparent IKEA à la seconde main.
+      <span><br>Aucune donnée trouvée : c'est une pure intuition.</span></li>
+  </ol>
+
+  <section class="canvas">
+    <p class="source">Osterwalder et al., Value Proposition Design, 2014</p>
+    <p class="titre">IKEA : un carré, un cercle</p>
+    <div class="grille">
+      <div>
+        <div class="carte">
+          <p class="kicker">Le carré · ce que propose IKEA</p>
+          <p class="nom">Carte de valeur</p>
+          <div class="trio">
+            <div>
+              <h3>Produits et services</h3>
+              <ul>
+                <li>Meubles en kit</li>
+                <li>Magasin et restaurant</li>
+                <li>Livraison et retrait</li>
+                <li>Conception de cuisine</li>
+                <li>Service après-vente</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Créateurs de gains</h3>
+              <ul>
+                <li>Prix accessibles et bonnes affaires</li>
+                <li>Notices de montage</li>
+                <li>Restaurant sur place</li>
+                <li>Offres étudiantes</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Solutions aux douleurs</h3>
+              <ul>
+                <li>Livraison sur créneau choisi</li>
+                <li>Retrait en magasin</li>
+                <li>Aide des vendeurs pour la cuisine</li>
+                <li>Service client</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="carte noire">
+          <p class="kicker">Le cercle · ce que vit le client</p>
+          <p class="nom">Profil client</p>
+          <div class="trio">
+            <div>
+              <h3>Jobs</h3>
+              <ul>
+                <li>Meubler son logement sans se ruiner <small>H5</small></li>
+                <li>Mener un gros projet au bout <small>H3</small></li>
+                <li>Récupérer et monter ses meubles <small>H2, H6</small></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Douleurs</h3>
+              <ul>
+                <li>Livraison reportée ou incomplète <small>H1</small></li>
+                <li>Frais de livraison et de retrait <small>H2</small></li>
+                <li>Vendeurs qui changent, attente <small>H3</small></li>
+                <li>SAV difficile à joindre <small>H4</small></li>
+                <li>Visite longue et fatigante <small>H7</small></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Gains</h3>
+              <ul>
+                <li>Du style à petit prix <small>H5</small></li>
+                <li>Des notices claires <small>H6</small></li>
+                <li>Une pause au restaurant <small>H7</small></li>
+                <li>Une livraison à la date promise <small>H1</small></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="adequation"><strong>Adéquation à tester</strong> : la carte semble bien répondre au prix et au montage, moins à la livraison et au SAV, qui pèsent surtout sur les gros projets.</p>
+        <p class="legende">H1 à H7 renvoient aux hypothèses ci-dessus. Le remplissage vient des avis lus et, pour les offres étudiantes, d'un article sur la rentrée 2025 : il reste à valider.</p>
+      </div>
+      <svg viewBox="0 0 300 300" role="img" aria-label="Cercle du profil client en trois parts : gains, jobs et douleurs">
+        <path d="M150 150 L4 150 A146 146 0 0 1 223 23.6 Z" fill="#dfecea" stroke="#f3f0e9" stroke-width="2"/>
+        <path d="M150 150 L223 23.6 A146 146 0 0 1 223 276.4 Z" fill="#141a1e" stroke="#f3f0e9" stroke-width="2"/>
+        <path d="M150 150 L223 276.4 A146 146 0 0 1 4 150 Z" fill="#f4e4dd" stroke="#f3f0e9" stroke-width="2"/>
+        <text x="106" y="96" fill="#2d6e66">Gains</text>
+        <text x="226" y="159" fill="#58b8ab">Jobs</text>
+        <text x="106" y="222" fill="#a8492b">Douleurs</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="canvas mapping">
+    <p class="source">Mapping de positionnement · positions estimées, non mesurées</p>
+    <p class="titre">IKEA face à ses concurrents</p>
+    <div class="defile">
+      <svg viewBox="0 0 900 460" role="img" aria-label="Mapping selon le prix et le niveau d'accompagnement. IKEA, Conforama et But sont du côté des prix accessibles, Schmidt et Mobalpa du côté des prix élevés et de l'accompagnement.">
+        <rect x="70" y="30" width="810" height="400" rx="12" fill="#fff"/>
+        <line x1="70" y1="230" x2="880" y2="230" stroke="#141a1e" stroke-width="1.5"/>
+        <line x1="475" y1="30" x2="475" y2="430" stroke="#141a1e" stroke-width="1.5"/>
+
+        <text class="axe centre" x="475" y="20">On s'occupe de tout</text>
+        <text class="axe centre" x="475" y="450">Je fais tout moi-même</text>
+        <text class="axe" x="78" y="222">Prix accessible</text>
+        <text class="axe fin" x="872" y="222">Prix élevé</text>
+
+        <rect x="110" y="60" width="310" height="120" rx="12" fill="#f4e4dd" stroke="#a8492b" stroke-width="1.5" stroke-dasharray="6 5"/>
+        <text class="zone centre" x="265" y="112">Accessible et accompagné :</text>
+        <text class="zone centre" x="265" y="134">une place à prendre ? (H1 à H4)</text>
+
+        <circle cx="270" cy="335" r="13" fill="#141a1e"/>
+        <text class="ikea" x="292" y="342">IKEA</text>
+
+        <circle cx="190" cy="272" r="8" fill="#2d6e66"/>
+        <text x="204" y="277">Conforama</text>
+        <circle cx="330" cy="256" r="8" fill="#2d6e66"/>
+        <text x="344" y="261">But</text>
+        <circle cx="690" cy="110" r="8" fill="#2d6e66"/>
+        <text x="704" y="115">Schmidt</text>
+        <circle cx="745" cy="76" r="8" fill="#2d6e66"/>
+        <text x="759" y="81">Mobalpa</text>
+
+        <circle cx="560" cy="300" r="8" fill="#fff" stroke="#555b5f" stroke-width="2" stroke-dasharray="3 3"/>
+        <text class="sans" x="574" y="305">Maisons du Monde (sans donnée)</text>
+        <circle cx="130" cy="395" r="8" fill="#fff" stroke="#555b5f" stroke-width="2" stroke-dasharray="3 3"/>
+        <text class="sans" x="144" y="400">Seconde main (sans donnée, H9)</text>
+      </svg>
+    </div>
+    <ul class="pourquoi">
+      <li><strong>IKEA :</strong> les avis mettent en avant les prix et le montage par le client lui-même (H5, H6).</li>
+      <li><strong>Conforama et But :</strong> un blog comparatif les dit proches en prix, Conforama souvent perçu un peu moins cher en entrée de gamme, avec livraison et montage proposés.</li>
+      <li><strong>Schmidt et Mobalpa :</strong> des témoignages de forum citent des devis de cuisine nettement plus élevés qu'IKEA. Leur ordre entre eux est incertain, car les avis se contredisent.</li>
+      <li><strong>Maisons du Monde et seconde main :</strong> placés au jugé, faute de donnée comparable.</li>
+    </ul>
+    <p class="legende">Point plein : position appuyée sur une source, même fragile. Point en pointillé : aucune donnée. Pour valider ce mapping, il faudrait une enquête auprès de clients sur ces deux axes.</p>
+  </section>
+
+  <section class="canvas geo">
+    <p class="source">GEO · requêtes à poser aux moteurs d'IA, pas encore testées</p>
+    <p class="titre">5 requêtes GEO</p>
+    <div class="requetes">
+      <div class="requete">
+        <p class="numero">Requête 1 · gros projet</p>
+        <p class="texte">Où faire ma cuisine à Marseille avec un petit budget et de l'accompagnement ?</p>
+        <p class="teste">Teste si IKEA est cité sur la place à prendre du mapping (H3).</p>
+      </div>
+      <div class="requete">
+        <p class="numero">Requête 2 · comparaison</p>
+        <p class="texte">Cuisine IKEA ou Schmidt : laquelle choisir pour un petit budget ?</p>
+        <p class="teste">Teste les arguments retenus face à un cuisiniste (H3, H5).</p>
+      </div>
+      <div class="requete">
+        <p class="numero">Requête 3 · coût réel</p>
+        <p class="texte">Combien coûtent la livraison et le montage d'une cuisine IKEA ?</p>
+        <p class="teste">Teste si la réponse est claire et si elle s'appuie sur IKEA (H2).</p>
+      </div>
+      <div class="requete">
+        <p class="numero">Requête 4 · problème</p>
+        <p class="texte">Que faire si ma livraison IKEA est incomplète et que je n'arrive pas à joindre le SAV ?</p>
+        <p class="teste">Teste la réputation et la solution proposée (H1, H4).</p>
+      </div>
+      <div class="requete">
+        <p class="numero">Requête 5 · jeunes</p>
+        <p class="texte">Comment meubler mon premier appartement étudiant pas cher : IKEA, Conforama ou seconde main ?</p>
+        <p class="teste">Teste la place d'IKEA face à la seconde main (H8, H9).</p>
+      </div>
+      <div class="requete noire">
+        <p class="numero">À relever pour chaque requête</p>
+        <p class="texte">IKEA est-il cité ? À quel rang ? Quels concurrents et quelles sources apparaissent ? Le ton est-il positif, neutre ou négatif&nbsp;?</p>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

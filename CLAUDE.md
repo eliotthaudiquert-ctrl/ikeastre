@@ -30,8 +30,9 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 | `05 Campagne` | Vidéo « Des meubles pour tous les rebondissements » (`Vidéo IKEA/`) + projet Remotion (`IKEA Reel/reel`) |
 | `06 Atelier brief déconstruit` | Slide de l'atelier (HTML, PDF, PNG) |
 | `07 Agent IA` | Agent de recherche « Fika » : missions vérification + veille, livrables Excel, slides, vidéo. Voir son `LISEZ-MOI.md` |
-| `08 Segmentation` | Segmentation Gen Z (PDF + slides HTML + corpus chiffres/verbatims sourcés) |
+| `08 Segmentation` | Segmentation Gen Z (PDF + slides HTML + corpus chiffres/verbatims sourcés) ; `Première version (12-10-2026)` = 1re segmentation du marché IKEA (PPTX + PDF) |
 | `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits |
+| `10 Hypothèses clients` | Fiche d'hypothèses tirées d'avis en ligne (HTML, imprimable), aucune validée : à tester auprès de vrais clients |
 | `IKEA - Envoi livrables PFR` | Les livrables PFR envoyés le 23/11/2026 |
 
 Pas dans le dépôt (droits ou poids) : reel d'inspiration, rushs et bruitages Mixkit bruts, fichiers .wav, doublons. Le rendu vidéo final, lui, est bien là.
@@ -49,6 +50,7 @@ Pas dans le dépôt (droits ou poids) : reel d'inspiration, rushs et bruitages M
 Livrables de campagne sans responsable attribué (au 03/11) : affiche, carrousel, vidéo, X, indicateurs, conformité, sources, mention IA. À répartir.
 
 ## Journal
+- 24/11/2026 · Tobias : ajout de la première segmentation (12/10, PPTX + PDF) dans `08 Segmentation/Première version (12-10-2026)` et de la fiche hypothèses dans `10 Hypothèses clients`.
 - 24/11/2026 · Eliott : veille stratégique Session 1 (17 informations, 8 champs sur 8, sources contrôlées) dans `09 Veille stratégique`. Concept retenu : magasins compacts. Brique digitale encore à définir.
 - 24/11/2026 · Eliott : création du dépôt commun.
 - 23/11/2026 · Eliott : envoi à Loris des livrables 01, 02, 03 et du dossier stratégique.
