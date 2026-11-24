@@ -63,10 +63,12 @@ window.AVANCEMENT = {
     ["Atelier brief déconstruit", "06 Atelier brief déconstruit/Atelier brief déconstruit.pdf"],
     ["Kit de pilotage agile", "04 Pilotage agile/B3CPD_IKEA_Kit_Pilotage_Agile.xlsx"],
     ["Agent de recherche Fika", "07 Agent IA/LISEZ-MOI.md"],
-    ["Consigne EFN", "01 Consignes et cours/Consigne EFN B3CPD.pdf"]
+    ["Consigne EFN", "01 Consignes et cours/Consigne EFN B3CPD.pdf"],
+    ["Cours Veille stratégique, Session 1", "01 Consignes et cours/Session 1 - VEILLE STRATEGIQUE B3 - Ynov 26-27.pdf"]
   ],
 
   journal: [
+    { date: "24/11/2026", qui: "Tobias", quoi: "Ajout du cours Veille stratégique Session 1 (PDF) dans 01 Consignes et cours." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Présentation orale de la veille Session 1 : 11 slides en PDF (une idée par slide), générée depuis veille.json." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Veille Session 1, compléments MARKET : 5 dimensions, 5 questions MARKET, plan de veille continue (PDF de 9 à 12 pages) et grille du cours remplie." },
     { date: "24/11/2026", qui: "Eliott", quoi: "Page d'avancement du projet (Avancement.html)." },

@@ -23,7 +23,7 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 ## Structure du dossier
 | Dossier | Contenu |
 |---|---|
-| `01 Consignes et cours` | Consigne EFN B3CPD ; modèle de grille de veille du cours (Part 1) |
+| `01 Consignes et cours` | Consigne EFN B3CPD ; cours Veille stratégique Session 1 (PDF) et modèle de grille de veille (Part 1) |
 | `02 Dossier et oral Gen Z` | Dossier, synthèse 5 slides, sources ; `Versions Codex (copies)` = dossier stratégique d'équipe `B3CPD_IKEA_Equipe.pdf` et variantes |
 | `03 Personas` | Personas Léa et Noah en texte (les personas complets, dont Inès, sont dans les PDF du dossier 02) |
 | `04 Pilotage agile` | Kit de pilotage (charte, RACI, backlog) `B3CPD_IKEA_Kit_Pilotage_Agile.xlsx`, tableau des 37 livrables en 4 phases |
