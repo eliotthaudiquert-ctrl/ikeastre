@@ -18,7 +18,7 @@ window.AVANCEMENT = {
     rendu: "Dossier PFR Bloc 1 : 10 à 12 pages, PDF, en groupe, avec deux scénarios budgétaires (minimal viable et ambitieux).",
     etapes: [
       { session: "Session 1", titre: "Veille stratégique", detail: "Grille des 8 champs : 17 informations sourcées sur les magasins compacts, angle MARKET. Plus les 5 dimensions, les réponses aux 5 questions MARKET et le plan de veille continue.", etat: "fait",
-        liens: [["PDF", "09 Veille stratégique/Veille stratégique IKEA compacts.pdf"], ["Excel", "09 Veille stratégique/Veille stratégique IKEA compacts.xlsx"], ["Grille du cours", "09 Veille stratégique/Grille de veille (modèle du cours).xlsx"]] },
+        liens: [["PDF", "09 Veille stratégique/Veille stratégique IKEA compacts.pdf"], ["Excel", "09 Veille stratégique/Veille stratégique IKEA compacts.xlsx"], ["Grille du cours", "09 Veille stratégique/Grille de veille (modèle du cours).xlsx"], ["Présentation", "09 Veille stratégique/Présentation veille Session 1.pdf"]] },
       { session: "Session 2", titre: "Synthèse décisionnelle", detail: "Hiérarchiser les tendances et en tirer les décisions.", etat: "à faire" },
       { session: "Sessions 3-4", titre: "Business model", detail: "Comment le projet crée de la valeur.", etat: "à faire" },
       { session: "Session 5", titre: "Budget et arbitrages", detail: "Deux scénarios chiffrés, choix justifiés.", etat: "à faire" },
@@ -67,6 +67,7 @@ window.AVANCEMENT = {
   ],
 
   journal: [
+    { date: "24/11/2026", qui: "Tobias", quoi: "Présentation orale de la veille Session 1 : 11 slides en PDF (une idée par slide), générée depuis veille.json." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Veille Session 1, compléments MARKET : 5 dimensions, 5 questions MARKET, plan de veille continue (PDF de 9 à 12 pages) et grille du cours remplie." },
     { date: "24/11/2026", qui: "Eliott", quoi: "Page d'avancement du projet (Avancement.html)." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Ajout de la première segmentation (12/10, PPTX + PDF) et de la fiche d'hypothèses clients." },

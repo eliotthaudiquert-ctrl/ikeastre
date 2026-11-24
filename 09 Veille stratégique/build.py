@@ -327,13 +327,13 @@ def html_doc():
             f'<link rel="stylesheet" href="style.css"><style>{CSS}</style></head><body>{cover}{methode}{corps}{fin}</body></html>')
 
 
-def pdf(src):
+def pdf(src, out=None):
     candidats = [r"C:\Program Files\Google\Chrome\Application\chrome.exe",
                  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
                  "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
                  "/usr/bin/google-chrome"]
     chrome = next(c for c in candidats if Path(c).exists())
-    out = ICI / f"{NOM}.pdf"
+    out = out or ICI / f"{NOM}.pdf"
     subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=8000",
                     f"--print-to-pdf={out}", src.as_uri()], check=True, capture_output=True)
     return out
