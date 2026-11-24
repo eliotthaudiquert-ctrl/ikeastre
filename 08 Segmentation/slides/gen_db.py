@@ -1,0 +1,95 @@
+# Prépare les documents de la base partagée IKÉASTRE (onglet Segmentation) à partir des données du deck.
+import json, importlib.util, pathlib
+ICI = pathlib.Path(__file__).parent
+spec = importlib.util.spec_from_file_location("b", ICI / "build.py"); b = importlib.util.module_from_spec(spec); spec.loader.exec_module(b)
+out = ICI.parent / "db"; out.mkdir(exist_ok=True)
+
+def who(v):
+    w = v["profil"].split(";")[0].split("(")[0].strip()
+    return "Pseudo JVC" if w.startswith("pseudo") else w
+
+segof = {vid: s["k"] for s in b.SEG for vid in s["ids"]}
+writes = []
+for i, s in enumerate(b.SEG):
+    qs = []
+    for vid, cut in s["quotes"]:
+        v = b.V[vid]
+        qs.append({"id": vid, "texte": cut or v["texte"], "qui": who(v), "src": b.court(v["source"]), "annee": v["date"][-4:], "url": v["url"]})
+    t = b.T[s["k"]]; j = b.J[s["k"]]
+    d = {"k": s["k"], "nom": s["nom"], "job": s["job"], "statut": s["statut"], "statutTxt": s["statut_txt"], "taille": s["taille"], "unite": s["unite"],
+         "tailleNote": s["taille_note"], "attr": s["attr"], "cap": s["cap"], "crit": [{"f": a, "v": c} for a, c in s["crit"]],
+         "jobs": [{"t": a, "v": c} for a, c in s["jobs"]], "quotes": qs, "frein": s["freins"], "ids": s["ids"], "persona": s["persona"],
+         "tests": [{"r": c, "t": x} for c, x in t[:5]], "verdict": t[5], "justA": j[1], "justC": j[3], "order": i, "resume": s.get("resume", "")}
+    writes.append({"op": "set", "collection": "segmentation", "doc_id": "seg-" + s["k"], "data": d})
+
+meta = {
+ "titre": "Pour qui, exactement ?",
+ "sousTitre": "Livrable 01 · Analyse de segmentation avancée · Séance 2 « Segmenter et incarner » (6 nov. 2026, Marie Guinet)",
+ "fichiers": "PDF 18 slides : IKEA › 08 Segmentation › Segmentation IKEA Gen Z.pdf · corpus complet avec les URL : 08 Segmentation › corpus",
+ "kpis": [{"v": str(b.N_V), "t": "verbatims réels, recopiés mot pour mot"}, {"v": str(b.N_SRC), "t": "pages sources (forum 18-25, ICI, France 3)"},
+          {"v": str(b.N_C), "t": "chiffres sourcés (Insee, SIES, Dares, IPEA, IKEA)"}, {"v": "5", "t": "segments : 1 prioritaire, 1 à conquérir, 1 opportuniste, 2 exclus"}],
+ "assume": "Toujours 0 entretien. Les verbatims sont publics et la taille des segments est un ordre de grandeur calculé, pas une étude.",
+ "etapes": [{"t": "Coder", "v": "Un besoin, un frein et un contexte pour chaque verbatim, avec le prompt du cours."},
+            {"t": "Regrouper", "v": "Des groupes de personnes, pas de thèmes. Au moins deux familles de critères chacun."},
+            {"t": "Nommer", "v": "Un nom qui dit le job, écrit à la première personne."},
+            {"t": "Vérifier", "v": "Compter, citer mot pour mot, garder ce qui contredit, puis les cinq tests."}],
+ "prompt": f"Voici {b.N_V} verbatims numérotés. 1. Attribue à chacun un besoin, un frein et un contexte. 2. Regroupe-les en 3 à 5 groupes. 3. Pour chaque groupe : un nom, le nombre de verbatims, deux citations exactes avec leur numéro. 4. Liste les verbatims qui n'entrent dans aucun groupe. N'invente aucune citation.",
+ "groupesIA": [{"n": 9, "t": "Le prix d'abord, IKEA par défaut"}, {"n": 7, "t": "La seconde main assumée"}, {"n": 5, "t": "Le rejet de l'occasion"},
+               {"n": 8, "t": "Les galères d'accès"}, {"n": 6, "t": "Le meuble provisoire"}, {"n": 10, "t": "Hors groupe"}],
+ "controleIA": "10 citations sur 10 existent mot pour mot dans le corpus (vérification automatique). L'IA a elle-même signalé ses limites : auteurs qui parlent deux fois, avis orienté de V39-V40, effet de source possible entre forum et presse.",
+ "corrections": [
+   {"g": "Les galères d'accès (8)", "p": "C'est un frein, pas un groupe de personnes.", "f": "Rangés comme freins du segment A, qui achète neuf et doit tout transporter."},
+   {"g": "Le rejet de l'occasion (5)", "p": "C'est un critère psychographique.", "f": "Il distingue A de C : même âge, même budget, choix opposés."},
+   {"g": "Le prix d'abord (9) et le meuble provisoire (6)", "p": "Pertinents, mais l'horizon de vie les sépare.", "f": "A s'installe pour durer, B s'équipe pour l'année."},
+   {"g": "Hors groupe (10)", "p": "On y trouve deux vrais comportements.", "f": "Le restaurant et le samedi deviennent D, le flâneur du samedi. Avec V04, V10 et V42, la déco forme E, le chercheur de pièce unique. Il reste 4 verbatims hors segment (V11, V29, V34, V45)."}],
+ "corpus": {"jvc": 34, "presse": 11,
+   "themes": [["IKEA, qualité-prix", 9], ["Accès, transport, montage", 8], ["Seconde main", 7], ["Meuble provisoire", 6], ["Rejet de l'occasion", 5], ["Restaurant, samedi", 3], ["Déco", 3], ["Hard-discount", 2]],
+   "limites": ["34 verbatims sur 45 viennent d'un seul forum (jeuxvideo.com, Blabla 18-25 ans), très masculin et provocateur. L'âge y est supposé, jamais vérifié.",
+               "45 verbatims, mais pas 45 personnes : 6 auteurs parlent deux fois.",
+               "Les voix féminines sont presque toutes dans la presse, donc dans le segment C : possible effet de source.",
+               "V39-V40 : cofondateur d'une start-up de location de meubles, avis orienté.",
+               "Rien sur TikTok, Pinterest, Temu ou Vinted ; Reddit inaccessible."]},
+ "calc": {"A": [["20-24 ans hors foyer parental", "3 935 000 × 47 %", "1 849 450"], ["25-29 ans hors foyer parental", "3 996 000 × 81,5 %", "3 256 740"],
+                ["installés depuis moins de 4 ans", "5 106 190 × 79 %", "4 033 890"], ["moins les étudiants du segment B", "− 1 325 632", "≈ 2,7 M"]],
+          "B": [["inscrits dans le supérieur 2024-25 × parc locatif privé", "3 012 800 × 44 %", "≈ 1,3 M"]],
+          "sources": ["C01 Insee, population au 1/1/2026 (provisoire).",
+                      "C12 Insee, part vivant chez les parents (2018) : 18-24 ans 53 % en moyenne, 25-29 ans 18,5 %. Le taux des 18-24 est appliqué aux 20-24.",
+                      "C13 Insee Première n°2090 : un taux de ménages appliqué à des personnes.",
+                      "C03, C06 SIES et OVE (2023) : 44 % des étudiants dans le parc locatif privé.",
+                      "Résultat : un ordre de grandeur pour comparer les segments, pas une taille de marché."]},
+ "seuil": "Notes de 1 à 5 sur les deux axes, chaque note justifiée par un verbatim (V) ou un chiffre (C). Seuil à 3,5 : au-dessus, l'axe est « haut ».",
+ "decision": [
+   {"k": "A", "s": "prio", "t": "C'est le cœur du brief : « devenir le réflexe de la Gen Z à chaque emménagement ». IKEA est déjà son choix, il faut lever l'accès : relais, livraison, magasins compacts. Persona : Léa, 23 ans."},
+   {"k": "B", "s": "conq", "t": "Seconde cible, à condition d'investir : une offre « rentrée » pensée pour être revendue à IKEA en fin d'année (rachat existant). Persona : Noah, 19 ans."},
+   {"k": "D", "s": "oppo", "t": "Aucun budget dédié. On le capte là où il est déjà : le restaurant et les contenus drôles."},
+   {"k": "C", "s": "excl", "t": "Une campagne de produits neufs ne le convaincra pas. On ne le vise pas, sans le contredire : l'espace seconde vie reste là."},
+   {"k": "E", "s": "excl", "t": "Vendre du standard à quelqu'un qui fuit le standard est perdu d'avance. On assume de ne pas le viser."}],
+ "consequences": [
+   {"t": "L'accès compte plus que le prix", "v": "Le segment prioritaire trouve déjà IKEA bon marché. Ce qui le perd, c'est la route, la livraison et le samedi. La campagne doit parler d'abord d'accès."},
+   {"t": "L'humour a un terrain : les galères", "v": "Les notices (V03), la vis en trop, le jingle qu'on a en tête (V34), le samedi en magasin : le corpus donne la matière, à condition de ne jamais se moquer du client."},
+   {"t": "Nos personas tiennent, avec un correctif", "v": "Léa incarne A et Noah incarne B. Mais Noah doit devenir un profil « de passage » qui revend, pas un mini-Léa."}],
+ "questions": ["Quel job social pour B ? Le corpus ne dit rien sur le regard des autres.",
+               "Le rejet de l'occasion (V07, V31) concerne-t-il aussi les filles ? Le corpus ne permet pas de le dire.",
+               "Un étudiant revendrait-il ses meubles à IKEA s'il connaissait le rachat ?",
+               "Cible : 8 à 10 entretiens courts (A et B), avec les mêmes questions."],
+ "chiffres": ["C01, C12 Insee, population 2026 et décohabitation (2022)", "C13, C15 Insee Première n°2090, janv. 2026", "C16 Insee, voiture des ménages, 2026",
+              "C03 SIES, note 25.15, déc. 2025", "C06 OVE 2023, via ministère du Logement, 2025", "C19 FAGE, coût de la rentrée 2026",
+              "C24 Xerfi citant l'IPEA, août 2026 (fragile)", "C25, C26, C28 IKEA France, bilan FY25, 04/11/2025", "C29 IKEA France, 01/06/2026",
+              "C32 ikea.com/fr, rachat, consulté le 06/11/2026"],
+ "mention": "Concept académique indépendant, non affilié à IKEA. Analyse préparée avec l'aide de l'IA (Claude), citations vérifiées mot pour mot. Équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert."
+}
+writes.append({"op": "set", "collection": "segmentation", "doc_id": "meta", "data": meta})
+json.dump(writes, open(out / "batch_seg.json", "w", encoding="utf-8"), ensure_ascii=False)
+
+vw = []
+for vid, v in b.V.items():
+    vw.append({"op": "set", "collection": "verbatims", "doc_id": vid, "data": {"id": vid, "texte": v["texte"], "qui": who(v), "profil": v["profil"], "source": v["source"],
+               "date": v["date"], "url": v["url"], "theme": v["theme"], "seg": segof.get(vid, "")}})
+json.dump(vw, open(out / "batch_verb.json", "w", encoding="utf-8"), ensure_ascii=False)
+print(len(writes), len(vw))
+
+# Un fichier JSON par document, pour les écritures par file_path
+docs = out / "docs"; docs.mkdir(exist_ok=True)
+for w in writes + vw:
+    p = docs / f'{w["collection"]}-{w["doc_id"]}.json'
+    json.dump(w["data"], open(p, "w", encoding="utf-8"), ensure_ascii=False)

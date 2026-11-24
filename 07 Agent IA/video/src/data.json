@@ -1,0 +1,57 @@
+{
+ "actions": 270,
+ "recherches": 79,
+ "lectures": 161,
+ "boucles": 73,
+ "erreur_exemple": "Test : on glisse « 250 M » au lieu de 200 M → extrait introuvable dans la page",
+ "rangs": [
+  {
+   "id": "Q5.c-1",
+   "question": "IKEA Family (on avait 150 M)",
+   "chiffre": "200 millions",
+   "statut": "Infirmé",
+   "source": "Ingka Group",
+   "date": "2026-06-10"
+  },
+  {
+   "id": "Q1.b-1",
+   "question": "18-24 ans sans permis",
+   "chiffre": "36 %",
+   "statut": "Confirmé",
+   "source": "Injep",
+   "date": "2024-07"
+  },
+  {
+   "id": "Q4.a-total",
+   "question": "Kit 1er logement livré",
+   "chiffre": "230,94 €",
+   "statut": "Confirmé",
+   "source": "IKEA France",
+   "date": "2026-11-05"
+  },
+  {
+   "id": "Q2.b-1",
+   "question": "Abandon si livraison chère",
+   "chiffre": "76,3 %",
+   "statut": "Confirmé",
+   "source": "Ecommerce Nation",
+   "date": "2025-11-21"
+  },
+  {
+   "id": "Q3.b-1",
+   "question": "TikTok, 1re source d’info produit",
+   "chiffre": "66 %",
+   "statut": "Confirmé",
+   "source": "The Media Leader",
+   "date": "2026-04-09"
+  },
+  {
+   "id": "Q5.d",
+   "question": "Moins de 30 ans installés < 4 ans",
+   "chiffre": "79 %",
+   "statut": "Confirmé",
+   "source": "Insee",
+   "date": "2026-01-21"
+  }
+ ]
+}

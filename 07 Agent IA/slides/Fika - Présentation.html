@@ -1,0 +1,283 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Fika, l’agent IA IKÉASTRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&family=Noto+Sans+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>:root { --bleu:#0058A3; --jaune:#FFDA1A; --fond:#F5F3EE; --encre:#111418; --gris:#5b5f66; --rouge:#D9472B; --vert:#1F7A4D; }
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans', sans-serif; color: var(--encre); background: #ddd; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.slide { position: relative; width: 1280px; height: 720px; padding: 40px 64px 66px; display: flex; flex-direction: column; overflow: hidden; background: var(--fond); page-break-after: always; break-after: page; margin: 0 auto; }
+@media screen { .slide { margin: 24px auto; box-shadow: 0 10px 40px rgba(0,0,0,.15); } }
+.sur { font-family: 'Noto Sans Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--bleu); font-weight: 700; }
+.sur.clair { color: #cfe0f2; }
+.trait { margin-top: 10px; width: 44px; height: 6px; border-radius: 3px; background: var(--jaune); }
+.trait.large { width: 120px; height: 8px; }
+h1 { margin-top: 10px; font-size: 40px; font-weight: 800; color: var(--bleu); letter-spacing: -.5px; line-height: 1.1; }
+h2 { font-size: 26px; font-weight: 800; margin: 4px 0 8px; }
+h3 { font-size: 21px; font-weight: 800; margin: 4px 0 6px; line-height: 1.2; }
+p, li { font-size: 18px; line-height: 1.5; color: #2a2d33; }
+b { font-weight: 700; color: var(--encre); }
+.logo { position: absolute; top: 38px; right: 64px; height: 40px; }
+.carte { background: #fff; border-radius: 16px; border-top: 6px solid var(--jaune); padding: 20px 24px; }
+.carte.forte { background: var(--bleu); }
+.carte.forte h2, .carte.forte h3, .carte.forte b { color: #fff; }
+.carte.forte p, .carte.forte li { color: #e3ecf6; }
+.carte.forte .num-c { color: var(--jaune); }
+.carte.sombre { background: var(--encre); border-top-color: var(--jaune); padding: 10px 26px; }
+.num-c { font-family: 'Noto Sans Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--bleu); }
+ul { list-style: none; }
+.carte li { position: relative; padding-left: 18px; margin-top: 12px; }
+.carte li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--jaune); }
+.g2 { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; }
+.g-45 { grid-template-columns: 1.1fr 1fr; }
+.g3 { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; flex: 1; grid-auto-rows: 1fr; }
+.g4 { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.col { display: flex; flex-direction: column; gap: 16px; } .col .carte { flex: 1; }
+.ligne-m { display: flex; gap: 22px; padding: 26px 0; border-bottom: 1px solid #2c3138; }
+.ligne-m:last-child { border-bottom: none; }
+.ligne-m b { width: 100px; flex: none; color: var(--jaune); font-size: 21px; }
+.ligne-m span { color: #e9edf2; font-size: 18px; line-height: 1.45; }
+.bandeau { margin-top: 16px; background: var(--encre); color: #fff; border-radius: 12px; padding: 16px 22px; font-size: 16.5px; }
+.flux { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.etape { border-radius: 12px; padding: 18px 22px; font-size: 17px; background: #fff; }
+.etape.ko { border-left: 8px solid var(--rouge); } .etape.ko b { color: var(--rouge); }
+.etape.ok { border-left: 8px solid var(--vert); } .etape.ok b { color: var(--vert); }
+.note { margin-top: 16px; font-size: 15px; color: var(--gris); }
+.petit { font-size: 14px; color: var(--gris); margin-top: 4px; }
+.pied { position: absolute; left: 64px; right: 64px; bottom: 14px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.pied small { font-size: 9.5px; line-height: 1.45; color: #8a8d93; }
+.pied .num { font-family: 'Noto Sans Mono', monospace; font-size: 12px; font-weight: 700; color: var(--bleu); }
+/* couverture */
+.couv { background: var(--bleu); display: flex; flex-direction: row; gap: 60px; padding: 70px 64px; }
+.couv-g { flex: 1.2; }
+.fika { font-size: 200px; font-weight: 900; color: var(--jaune); letter-spacing: -8px; line-height: .95; margin-top: 18px; }
+.couv-p { margin-top: 24px; font-size: 24px; line-height: 1.4; color: #e3ecf6; max-width: 620px; }
+.couv-p b { color: #fff; }
+.couv-d { flex: 1; display: flex; flex-direction: column; gap: 14px; justify-content: center; }
+.mini { background: rgba(255,255,255,.08); border-left: 6px solid var(--jaune); border-radius: 10px; padding: 14px 18px; color: #fff; font-size: 16px; line-height: 1.4; }
+.mini span { display: block; font-family: 'Noto Sans Mono', monospace; font-size: 11.5px; letter-spacing: 1.5px; color: var(--jaune); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+.couv-pied { position: absolute; left: 64px; right: 64px; bottom: 18px; font-size: 10px; color: #a9c4e2; }
+.couv.fin { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.fin-t { font-size: 96px; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1.02; }
+.fin-t span { color: var(--jaune); }
+.fin .trait { margin: 28px auto 0; }
+/* boucle */
+.boucle { position: relative; margin: 26px auto 0; width: 1136px; height: 480px; }
+.fleches { position: absolute; inset: 0; width: 1136px; height: 480px; }
+.bx { position: absolute; width: 240px; height: 92px; background: #fff; border: 2.5px solid var(--bleu); border-radius: 14px; padding: 12px 16px; }
+.bx i { font-style: normal; font-family: 'Noto Sans Mono', monospace; font-weight: 700; color: var(--bleu); font-size: 17px; margin-right: 8px; }
+.bx b { font-size: 21px; }
+.bx span { display: block; font-size: 14px; color: var(--gris); line-height: 1.35; margin-top: 4px; }
+.bx.mission { background: var(--encre); border-color: var(--encre); width: 200px; height: auto; }
+.bx.mission b, .bx.livr b { color: #fff; } .bx.mission span { color: #c9ced6; }
+.bx.livr { background: var(--vert); border-color: var(--vert); width: 250px; height: auto; } .bx.livr span { color: #d8efe2; }
+.bx.verif { border-color: var(--rouge); } .bx.verif i { color: var(--rouge); }
+.bx.outils { border: 2px dashed #9a9da3; width: 170px; height: auto; }
+.rond { position: absolute; left: 488px; top: 156px; width: 160px; height: 160px; border-radius: 50%; background: var(--bleu); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.rond b { color: var(--jaune); font-size: 27px; font-weight: 900; } .rond span { color: #dbe7f4; font-size: 14px; }
+.tag-r { position: absolute; left: 330px; top: 112px; font-family: 'Noto Sans Mono', monospace; color: var(--rouge); font-weight: 700; font-size: 14px; line-height: 1.3; }
+.tag-r small { color: var(--gris); font-weight: 500; font-size: 12px; }
+.tag-v { position: absolute; left: 122px; top: 290px; font-family: 'Noto Sans Mono', monospace; color: var(--vert); font-weight: 700; font-size: 15px; }
+/* tableaux */
+.tab { margin-top: 18px; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; border-radius: 12px; overflow: hidden; font-size: 12px; }
+th { background: var(--bleu); color: #fff; text-align: left; padding: 8px 10px; font-weight: 700; font-size: 12px; }
+td { padding: 7px 10px; border-bottom: 1px solid #ebe8e1; vertical-align: top; line-height: 1.4; color: #2a2d33; }
+td.id { font-family: 'Noto Sans Mono', monospace; font-weight: 700; color: var(--bleu); white-space: nowrap; }
+td.src { color: var(--bleu); font-weight: 600; white-space: nowrap; } td.src span { color: var(--gris); font-weight: 400; font-family: 'Noto Sans Mono', monospace; font-size: 11px; }
+.chip { display: inline-block; border-radius: 6px; padding: 2px 8px; font-weight: 700; font-size: 11px; white-space: nowrap; }
+.chip.ok { background: #D7EBDD; } .chip.nu { background: #FFF1B3; } .chip.ko { background: #F6D2CC; } .chip.nt { background: #E4E4E4; }
+.mat th.crit { background: #fff; color: var(--bleu); border-bottom: 1px solid #ebe8e1; white-space: nowrap; }
+.mat td { font-size: 11.5px; } .mat td.nt { color: #9a9da3; font-style: italic; } .mat td.vide { color: #c0c0c0; }
+.run .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 22px 0 20px; } .run p { font-size: 18px; }
+.run .kpis div { background: var(--fond); border-radius: 10px; padding: 10px 6px; text-align: center; }
+.run .kpis b { display: block; font-size: 40px; font-weight: 900; color: var(--bleu); line-height: 1.1; }
+.run .kpis span { font-size: 13px; color: var(--gris); }
+.syn li { font-size: 15px; margin-top: 10px; }
+.etapes .gros { font-size: 64px; font-weight: 900; color: var(--bleu); line-height: 1; }
+.g2.bas { margin-top: 16px; flex: .55; }
+.outil h3 { font-size: 22px; } .outil p { font-size: 17px; }
+
+.carte.v-centre { display: flex; flex-direction: column; justify-content: center; }
+.exemple { margin-top: 16px; background: #fff; border-radius: 14px; border-left: 8px solid var(--rouge); padding: 16px 22px; flex: 1; }
+.exemple .num-c { color: var(--rouge); }
+.exemple code { display: block; margin-top: 8px; font-family: 'Noto Sans Mono', monospace; font-size: 14.5px; line-height: 1.55; color: var(--encre); white-space: pre-wrap; }
+.outil { display: flex; flex-direction: column; justify-content: center; }
+.outil h3 { font-size: 24px; } .outil p { font-size: 18px; }
+
+.m1 td { font-size: 13px; padding: 7px 10px; } .m1 td.theme { font-weight: 700; color: var(--encre); width: 150px; } .m1 td.src { width: 170px; }
+
+.mat td { font-size: 13px; padding: 10px 10px; line-height: 1.35; } .mat th { font-size: 13px; padding: 10px; } .mat th.crit { font-size: 13.5px; }
+.lecons .carte p { font-size: 15.5px; line-height: 1.45; } .lecons h3 { font-size: 19px; }
+
+.fin-ex { margin-top: 8px; font-size: 16px; font-weight: 700; color: var(--vert); }
+
+.m1 td { padding: 5px 10px; }
+.exemple.vert { border-left-color: var(--vert); flex: none; } .exemple.vert .num-c { color: var(--vert); } .exemple.vert p { margin-top: 6px; font-size: 16.5px; }
+.outils-run { margin-top: 18px; font-family: 'Noto Sans Mono', monospace; font-size: 13px; color: var(--gris); background: var(--fond); border-radius: 8px; padding: 10px 12px; }
+
+.mat td { font-size: 14px; }
+</style></head><body><section class="slide couv">
+  <div class="couv-g">
+    <div class="sur clair">IKÉASTRE · Module IA · 05/11/2026</div>
+    <div class="fika">Fika</div>
+    <div class="trait large"></div>
+    <p class="couv-p">L’agent IA qui <b>vérifie nos hypothèses</b> et <b>surveille la concurrence</b>, et rend un tableau sourcé et daté.</p>
+  </div>
+  <div class="couv-d">
+    <div class="mini"><span>Mission 1</span>Vérifier les questions de l’atelier « le brief déconstruit »</div>
+    <div class="mini"><span>Mission 2</span>Comparer IKEA à 5 concurrents sur 6 critères Gen Z</div>
+    <div class="mini"><span>Pourquoi « Fika »</span>La pause café suédoise : le temps qu’on boive un café, il a fait la recherche.</div>
+  </div>
+  <small class="couv-pied">Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small>
+</section><section class="slide "><div class="sur">Le problème</div><div class="trait"></div><h1>Pourquoi un agent ?</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g2">
+  <div class="carte"><div class="num-c">CE QU’ON AVAIT</div><h2>Des chiffres fragiles</h2>
+    <ul>
+      <li><b>« 1 jeune sur 4 déménage chaque année »</b> : une étude régionale (La Réunion, 2022).</li>
+      <li><b>« 1 meuble sur 4 vendu d’occasion »</b> : source tronquée à l’écran.</li>
+      <li><b>« 150 millions de membres IKEA Family »</b> : un chiffre de 2020.</li>
+      <li><b>0 entretien, 0 questionnaire</b> : nos personas restent des hypothèses.</li>
+    </ul></div>
+  <div class="carte forte"><div class="num-c">CE QU’IL NOUS FALLAIT</div><h2>Vérifier vite, sans tricher</h2>
+    <ul>
+      <li>Répondre aux <b>5 questions à creuser</b> de l’atelier de ce matin.</li>
+      <li>Savoir où se situent <b>les concurrents</b> sur nos 3 leviers : proximité, prix, codes Gen Z.</li>
+      <li>Un <b>tableau sourcé et daté</b>, réutilisable dans le dossier et à l’oral.</li>
+      <li>Une méthode qu’on peut <b>relancer</b> quand les chiffres changent.</li>
+    </ul></div>
+</div><div class="pied"><small>Sources : kit de pilotage agile IKÉASTRE, onglet Données IKEA (limites d’usage des chiffres).<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">02</span></div></section><section class="slide "><div class="sur">Théorie appliquée</div><div class="trait"></div><h1>La boucle de Fika</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="boucle">
+  <svg viewBox="0 0 1136 480" class="fleches">
+    <defs>
+      <marker id="b" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#0058A3"/></marker>
+      <marker id="r" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#D9472B"/></marker>
+      <marker id="v" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#1F7A4D"/></marker>
+      <marker id="n" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#111418"/></marker>
+    </defs>
+    <path d="M200,40 H438" stroke="#111418" stroke-width="3" fill="none" marker-end="url(#n)"/>
+    <path d="M688,56 H820 V180" stroke="#0058A3" stroke-width="4" fill="none" marker-end="url(#b)"/>
+    <path d="M820,282 V416 H698" stroke="#0058A3" stroke-width="4" fill="none" marker-end="url(#b)"/>
+    <path d="M448,416 H316 V292" stroke="#0058A3" stroke-width="4" fill="none" marker-end="url(#b)"/>
+    <path d="M316,190 V80 H438" stroke="#D9472B" stroke-width="3" stroke-dasharray="9 7" fill="none" marker-end="url(#r)"/>
+    <path d="M196,236 H110 V366" stroke="#1F7A4D" stroke-width="4" fill="none" marker-end="url(#v)"/>
+    <path d="M940,236 H962" stroke="#8a8d93" stroke-width="3" stroke-dasharray="5 5" fill="none"/>
+  </svg>
+  <div class="bx mission" style="left:0;top:0"><b>Mission</b><span>rôle, sources, format, règles</span></div>
+  <div class="bx" style="left:448px;top:10px"><i>1</i><b>Planifier</b><span>écrit son plan, question par question</span></div>
+  <div class="bx" style="left:700px;top:190px"><i>2</i><b>Agir</b><span>appelle un outil</span></div>
+  <div class="bx" style="left:448px;top:370px"><i>3</i><b>Observer</b><span>lit la page : URL, date, extrait</span></div>
+  <div class="bx verif" style="left:196px;top:190px"><i>4</i><b>Vérifier</b><span>se relit, puis le contrôleur ouvre chaque source</span></div>
+  <div class="rond"><b>Modèle</b><span>Claude raisonne</span></div>
+  <div class="bx outils" style="left:966px;top:150px"><b>Outils</b><span>recherche web<br>lecture de pages<br>texte exact<br>calcul<br>fichiers, tableur</span></div>
+  <div class="bx livr" style="left:0;top:376px"><b>Livrable</b><span>oui : tableau Excel sourcé et daté</span></div>
+  <div class="tag-r">non : on reboucle<br><small>3 tours maximum</small></div>
+  <div class="tag-v">oui</div>
+</div><div class="pied"><small>Schéma : « La boucle de l’agent », cours IA, appliqué à notre agent.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">03</span></div></section><section class="slide "><div class="sur">Étape 0</div><div class="trait"></div><h1>Une fiche mission, pas un vœu</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g2 g-45">
+  <div class="carte sombre">
+    <div class="ligne-m"><b>Rôle</b><span>analyste data (mission 1), veilleur (mission 2) de l’équipe IKÉASTRE</span></div>
+    <div class="ligne-m"><b>Sources</b><span>statistique publique &gt; site officiel &gt; institut &gt; presse éco &gt; le reste</span></div>
+    <div class="ligne-m"><b>Format</b><span>JSON imposé : 16 champs par ligne, dont source, date, extrait exact, limite</span></div>
+    <div class="ligne-m"><b>Règles</b><span>zéro invention, extrait mot pour mot, calculs à l’outil, « Non trouvé » plutôt qu’un chiffre faux</span></div>
+  </div>
+  <div class="col">
+    <div class="carte"><div class="num-c">MISSION 1 · VÉRIFIER</div><h3>14 questions en 5 blocs</h3>
+      <p>Q1 accès sans voiture · Q2 prix ou livraison · Q3 humour et achat · Q4 budgets de 700 € et 350 € · Q5 nos chiffres à revérifier.</p></div>
+    <div class="carte"><div class="num-c">MISSION 2 · VEILLE</div><h3>6 enseignes × 6 critères = 36 cases</h3>
+      <p>IKEA, Maisons du Monde, Conforama, But, Action, Leboncoin · réseau, petits formats, livraison, offre jeunes, fidélité et seconde main, TikTok.</p></div>
+  </div>
+</div><div class="pied"><small>Fichiers : agent/SYSTEME.md (règles), agent/missions/1-verification.md et 2-veille.md.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">04</span></div></section><section class="slide "><div class="sur">Étape 2 · Agir</div><div class="trait"></div><h1>Ses outils, et ses interdits</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g3"><div class="carte outil"><div class="num-c">WebSearch</div><h3>Recherche web</h3><p>trouve les sources candidates</p></div><div class="carte outil"><div class="num-c">WebFetch</div><h3>Lecture de pages</h3><p>lit et résume une page</p></div><div class="carte outil"><div class="num-c">lire_page.py</div><h3>Texte exact</h3><p>renvoie le passage mot pour mot, HTML ou PDF</p></div><div class="carte outil"><div class="num-c">calcul.py</div><h3>Calcul</h3><p>additionne les prix, compare aux budgets : jamais de tête</p></div><div class="carte outil"><div class="num-c">Read / Write</div><h3>Fichiers</h3><p>plan, notes, livrable JSON</p></div><div class="carte outil"><div class="num-c">verifier.py</div><h3>Contrôle</h3><p>il peut se faire relire avant de rendre</p></div></div>
+<div class="bandeau">Interdit : se connecter à un compte, remplir un formulaire, lancer une autre commande que ses 3 scripts. En mode « ne demande pas », tout le reste est refusé d’office.</div><div class="pied"><small>Fichiers : agent/lancer.py (liste des outils autorisés), agent/outils/.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">05</span></div></section><section class="slide "><div class="sur">Étape 4 · Vérifier</div><div class="trait"></div><h1>Le contrôleur ne le croit pas sur parole</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g4">
+  <div class="carte"><div class="num-c">CONTRÔLE 1</div><h3>Structure</h3><p>16 champs par ligne, statut et confiance dans les listes autorisées.</p></div>
+  <div class="carte"><div class="num-c">CONTRÔLE 2</div><h3>Couverture</h3><p>Chaque question ou case attendue a au moins une ligne.</p></div>
+  <div class="carte"><div class="num-c">CONTRÔLE 3</div><h3>Dates</h3><p>Date de la source et date de consultation valides, jamais dans le futur.</p></div>
+  <div class="carte forte"><div class="num-c">CONTRÔLE 4</div><h3>L’extrait existe</h3><p>Le code ouvre chaque lien et cherche l’extrait dans la page. Pas trouvé : ligne refusée.</p></div>
+</div>
+<div class="flux">
+  <div class="etape ko"><b>non</b> : la liste des erreurs repart à l’agent, qui replanifie ces lignes</div>
+  <div class="etape ok"><b>oui</b> : le tableur Excel est généré, avec une colonne « Contrôle de l’extrait »</div>
+</div>
+<div class="exemple"><div class="num-c">TEST RÉEL · ON A GLISSÉ UN FAUX CHIFFRE (250 M AU LIEU DE 200 M) ET UNE DATE DANS LE FUTUR</div><code>✗ Q2.b-1 : date_source dans le futur (2027-02-01)
+✗ Q5.c-1 : extrait introuvable dans la page (score 0.76) : recopie-le mot pour mot avec…</code><p class="fin-ex">→ l’agent rouvre les sources, corrige, et le contrôleur dit oui · 35/35 lignes valides au tour 2.</p></div>
+<p class="note">Les réseaux sociaux bloquent les robots : ces lignes sortent en « à contrôler à la main », jamais en « vérifié ».</p><div class="pied"><small>Fichier : agent/outils/verifier.py · exemple tiré du journal de l’agent (agent/journal).<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">06</span></div></section><section class="slide "><div class="sur">Le vrai lancement</div><div class="trait"></div><h1>Ce qu’il a fait le 05/11/2026</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g2"><div class="carte run"><div class="num-c">MISSION 1 · VÉRIFICATION</div>
+      <div class="kpis">
+        <div><b>13,7</b><span>minutes</span></div>
+        <div><b>132</b><span>actions</span></div>
+        <div><b>27</b><span>recherches</span></div>
+        <div><b>97</b><span>lectures et calculs</span></div>
+        <div><b>1</b><span>tour(s) de contrôle</span></div>
+      </div>
+      <p><b>35/35</b> lignes validées par le contrôleur · 12 relevé · 13 confirmé · 9 nuancé · 1 infirmé</p>
+      <p class="petit">1 point signalé « à contrôler à la main » (date absente, page TikTok).</p>
+      <div class="outils-run">scripts (texte exact, calcul, contrôle) 78 · WebSearch 27 · WebFetch 19 · Write 4 · Edit 3</div></div><div class="carte run"><div class="num-c">MISSION 2 · VEILLE</div>
+      <div class="kpis">
+        <div><b>11,4</b><span>minutes</span></div>
+        <div><b>138</b><span>actions</span></div>
+        <div><b>52</b><span>recherches</span></div>
+        <div><b>77</b><span>lectures et calculs</span></div>
+        <div><b>1</b><span>tour(s) de contrôle</span></div>
+      </div>
+      <p><b>38/38</b> lignes validées par le contrôleur · 35 relevé · 3 non trouvé</p>
+      <p class="petit">10 points signalés « à contrôler à la main » (date absente, page TikTok).</p>
+      <div class="outils-run">scripts (texte exact, calcul, contrôle) 62 · WebSearch 52 · WebFetch 15 · Write 3 · Edit 3</div></div></div>
+<div class="exemple vert"><div class="num-c">ET LE REBOUCLAGE ?</div><p>Les deux missions sont passées au premier contrôle : l’agent s’est relancé lui-même le contrôleur avant de rendre. Pour prouver la boucle, on a saboté une copie (slide 6) : refusée, réparée, acceptée en 0,6 minute.</p></div><div class="pied"><small>Sources : agent/journal/bilan-mission-1.json et bilan-mission-2.json.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">07</span></div></section><section class="slide "><div class="sur">Mission 1 · résultats</div><div class="trait"></div><h1>Accès, livraison, humour</h1><img class="logo" src="ikea-logo.png" alt="IKEA"><div class="tab"><table class='m1'><tr><th>Id</th><th>Thème</th><th>Ce que dit la source</th><th>Statut</th><th>Source · date</th></tr><tr><td class="id">Q1.a-1</td><td class="theme">Accès sans voiture</td>
+          <td>La page officielle liste 36 magasins classiques, plus 2 formats compacts ouverts (Le Mans, Limoges) et 1 annoncé (Angers). Soit 38 magasins ouverts au 5…</td><td><span class="chip ok">Relevé</span></td>
+          <td class="src">IKEA France<br><span>2026-11-05</span></td></tr><tr><td class="id">Q1.b-1</td><td class="theme">Accès sans voiture</td>
+          <td>En 2019, 64 % des 18-24 ans avaient le permis : environ un sur trois (36 %) ne l&#x27;a donc pas.</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">Injep (Institut national…<br><span>2024-07</span></td></tr><tr><td class="id">Q1.b-2</td><td class="theme">Accès sans voiture</td>
+          <td>Les jeunes des grandes villes ont bien moins souvent le permis : 41 % dans l&#x27;agglomération parisienne contre 85 % en milieu rural.</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">Cour des comptes<br><span>2025-03-19</span></td></tr><tr><td class="id">Q1.c-lyon-2</td><td class="theme">Accès sans voiture</td>
+          <td>Oui : l&#x27;office du tourisme de Lyon indique que le magasin est à proximité du métro D (station Parilly).</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">ONLYLYON Tourisme et…<br><span>inconnue</span></td></tr><tr><td class="id">Q1.c-lille-2</td><td class="theme">Accès sans voiture</td>
+          <td>Probablement, mais la seule source trouvée est ancienne : un document de 2009 situe IKEA dans la zone commerciale de Lomme, dont la galerie a une entrée face…</td><td><span class="chip nu">Nuancé</span></td>
+          <td class="src">DILA – open data AMF<br><span>2009-09-03</span></td></tr><tr><td class="id">Q2.a-1</td><td class="theme">Prix ou livraison</td>
+          <td>Relevé du 5 novembre 2026 : point relais dès 2 €, colis postal dès 9 €, livraison devant chez soi dès 40 €, dans la pièce dès 60 €.</td><td><span class="chip ok">Relevé</span></td>
+          <td class="src">IKEA France<br><span>2026-11-05</span></td></tr><tr><td class="id">Q2.b-1</td><td class="theme">Prix ou livraison</td>
+          <td>Oui : 76,3 % des e-acheteurs français disent annuler leur commande si les frais de livraison sont jugés trop élevés.</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">Ecommerce Nation (étude…<br><span>2025-11-21</span></td></tr><tr><td class="id">Q3.a-1</td><td class="theme">Humour</td>
+          <td>91 % des personnes interrogées préfèrent les marques drôles, 94 % chez la Gen Z. Le même rapport indique que 72 % choisiraient une marque qui utilise l&#x27;humour…</td><td><span class="chip nu">Nuancé</span></td>
+          <td class="src">VMSD (reprise du…<br><span>2022-06</span></td></tr><tr><td class="id">Q3.a-2</td><td class="theme">Humour</td>
+          <td>Selon Kantar, l&#x27;humour n&#x27;est efficace que s&#x27;il est relié à la marque ; dans ce cas il renforce l&#x27;efficacité à court et long terme.</td><td><span class="chip nu">Nuancé</span></td>
+          <td class="src">Kantar<br><span>2024-08-15</span></td></tr><tr><td class="id">Q3.b-1</td><td class="theme">Humour</td>
+          <td>TikTok est la première plateforme d&#x27;information produit pour 66 % des jeunes interrogés, devant Instagram (44 %) et YouTube (38 %).</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">The Media Leader FR…<br><span>2026-04-09</span></td></tr></table></div><div class="pied"><small>10 lignes clés sur 35. Tableau complet, avec liens et extraits exacts : livrables/IKEA_Agent_Mission1_Verification_2026-11-05.xlsx.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">08</span></div></section><section class="slide "><div class="sur">Mission 1 · résultats</div><div class="trait"></div><h1>Budgets et chiffres revérifiés</h1><img class="logo" src="ikea-logo.png" alt="IKEA"><div class="tab"><table class='m1'><tr><th>Id</th><th>Thème</th><th>Ce que dit la source</th><th>Statut</th><th>Source · date</th></tr><tr><td class="id">Q4.a-total</td><td class="theme">Budget</td>
+          <td>Le kit le moins cher coûte 190,94 €, soit 230,94 € avec la livraison devant chez soi (dès 40 €). Ça tient dans les 700 € de Léa (reste 469,06 €) et dans les…</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">IKEA France<br><span>2026-11-05</span></td></tr><tr><td class="id">Q4.a-matelas</td><td class="theme">Budget</td>
+          <td>Matelas en mousse ÅGOTNES 90x200 cm : 49 € (relevé du 5 novembre 2026), mention « Prix exclusif magasin ».</td><td><span class="chip ok">Relevé</span></td>
+          <td class="src">IKEA France<br><span>2026-11-05</span></td></tr><tr><td class="id">Q4.b-1</td><td class="theme">Budget</td>
+          <td>Selon la FAGE, la rentrée 2026 coûte 3 240 € en moyenne pour un étudiant non boursier de 19 ans en L1.</td><td><span class="chip nu">Nuancé</span></td>
+          <td class="src">La finance pour tous…<br><span>2026-09-10</span></td></tr><tr><td class="id">Q5.a-1</td><td class="theme">Chiffres du dossier</td>
+          <td>En 2020, 29 % des ménages dont le référent a moins de 25 ans ont déménagé, sept fois plus que les 60 ans ou plus (4 %).</td><td><span class="chip nu">Nuancé</span></td>
+          <td class="src">Insee<br><span>2024-03-19</span></td></tr><tr><td class="id">Q5.a-3</td><td class="theme">Chiffres du dossier</td>
+          <td>En 2023, 8,8 % de la population a déménagé ; à 19 ans, 16,9 % changent de commune. La mobilité baisse pour tous les âges sauf les jeunes de fin de lycée.</td><td><span class="chip nu">Nuancé</span></td>
+          <td class="src">Insee<br><span>2025-09-30</span></td></tr><tr><td class="id">Q5.b</td><td class="theme">Chiffres du dossier</td>
+          <td>Xerfi cite les estimations de l&#x27;Ipea : un meuble sur quatre vendu en France est d&#x27;occasion, pour environ 1,3 milliard d&#x27;euros.</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">Xerfi (avis d&#x27;expert),…<br><span>2026-08-31</span></td></tr><tr><td class="id">Q5.c-1</td><td class="theme">Chiffres du dossier</td>
+          <td>IKEA Family compte plus de 200 millions de membres dans le monde (juin 2026), contre 150 millions en août 2020. Notre chiffre est à mettre à jour.</td><td><span class="chip ko">Infirmé</span></td>
+          <td class="src">Ingka Group<br><span>2026-06-10</span></td></tr><tr><td class="id">Q5.d</td><td class="theme">Chiffres du dossier</td>
+          <td>Confirmé mot pour mot : 79 % des ménages de moins de 30 ans habitent leur logement depuis moins de quatre ans (45 % chez les 30-39 ans).</td><td><span class="chip ok">Confirmé</span></td>
+          <td class="src">Insee<br><span>2026-01-21</span></td></tr></table></div><div class="pied"><small>Prix IKEA relevés sur ikea.com/fr le jour indiqué, susceptibles de changer. Kit : lit NEIDEN, sommier LURÖY, matelas ÅGOTNES, LINNMON/ADILS, chaise SANDSBERG, portant MULIG.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">09</span></div></section><section class="slide "><div class="sur">Mission 2 · veille</div><div class="trait"></div><h1>IKEA face à 5 concurrents</h1><img class="logo" src="ikea-logo.png" alt="IKEA"><div class="tab"><table class='mat'><tr><th></th><th>IKEA</th><th>Maisons du Monde</th><th>Conforama</th><th>But</th><th>Action</th><th>Leboncoin</th></tr><tr><th class='crit'>Réseau en France</th><td class="">37 magasins</td><td class="">328 magasins (groupe)</td><td class="">181 points de vente</td><td class="">352 magasins</td><td class="">900 magasins</td><td class="">30,5 millions de visiteurs mensuels</td></tr><tr><th class='crit'>Petits formats</th><td>Oui : 1er compact à Limoges (27/05/2026), 10 villes d’ici 2030</td><td>Oui : centre-ville, zone commerciale et centres commerciaux</td><td>En partie : format plus petit, mais en périphérie</td><td>Petit format (1 200 à 1 500 m²), pas de centre-ville</td><td>Oui : 1er magasin du centre de Paris (Bastille, 2025)</td><td class="nt">Non trouvé</td></tr><tr><th class='crit'>Livraison</th><td>Point relais 2&nbsp;€ (Family) ou 7&nbsp;€</td><td>Retrait gratuit ; livraison offerte dès 1 000&nbsp;€ (source tierce)</td><td>Devant chez soi 35&nbsp;€ (commande &lt; 200&nbsp;€)</td><td>Retrait gratuit en 2 h ; tarif domicile non trouvé</td><td>Pas de vente en ligne en France</td><td>Livraison XL meubles dès 19,49&nbsp;€</td></tr><tr><th class='crit'>Offre jeunes</th><td>Rentrée 2025 : −10&nbsp;% dès 150&nbsp;€ (saisonnier)</td><td>−10&nbsp;% étudiants toute l’année (Student Beans)</td><td>Été 2026 : 50&nbsp;€ offerts dès 250&nbsp;€ (terminé)</td><td>Rentrée 2025 : bon de 30&nbsp;€ (saisonnier)</td><td class="nt">Non trouvé</td><td class="nt">Non trouvé</td></tr><tr><th class='crit'>Fidélité, occasion</th><td>IKEA Family + rachat «&nbsp;seconde vie&nbsp;»</td><td>Programme «&nbsp;Ma Maison du Monde&nbsp;» (2024)</td><td>Carte Confo+ ; reprise via l’appli Geev</td><td>Fidélité oui ; pas de seconde main trouvée</td><td>Carte digitale ; pas de seconde main</td><td>La seconde main est le modèle ; pas de fidélité</td></tr><tr><th class='crit'>TikTok</th><td class="">104,4 K abonnés</td><td class="">132,6 K abonnés</td><td class="">58 K abonnés</td><td class="">131,8 K abonnés</td><td class="">554,3 K abonnés</td><td class="">16,8 K abonnés</td></tr></table></div><div class="pied"><small>36 cases sourcées et datées (relevés du 05/11/2026) : livrables/IKEA_Agent_Mission2_Veille.xlsx.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">10</span></div></section><section class="slide "><div class="sur">Ce que ça change</div><div class="trait"></div><h1>6 enseignements pour la campagne</h1><img class="logo" src="ikea-logo.png" alt="IKEA"><div class="g3 lecons"><div class="carte"><div class="num-c">01</div><h3>« Près de toi » = sans voiture</h3><p>Un tiers des 18-24 ans n’a pas le permis (Q1.b-1), et seulement 41 % dans l’agglomération parisienne (Q1.b-2). La promesse doit parler du transport des meubles, pas seulement de l’adresse.</p></div><div class="carte"><div class="num-c">02</div><h3>La livraison pèse plus que le prix</h3><p>Le kit premier logement le moins cher coûte 190,94 € (Q4.a-total), mais la livraison devant chez soi part de 40 € (Q2.a-1). 76,3 % des e-acheteurs disent abandonner si les frais sont trop élevés (Q2.b-1).</p></div><div class="carte"><div class="num-c">03</div><h3>Les budgets tiennent</h3><p>Kit livré : 230,94 €. Ça rentre dans les 700 € de Léa et les 350 € de Noah (Q4.a-total), en premiers prix. Message possible : « ton studio meublé pour moins de 250 € livré ».</p></div><div class="carte"><div class="num-c">04</div><h3>L’humour fait préférer, pas acheter</h3><p>94 % des Gen Z interrogés préfèrent les marques drôles (Q3.a-1), à condition que l’humour soit relié à la marque (Q3.a-2). Donc chaque « raison » montre un vrai produit et son prix.</p></div><div class="carte"><div class="num-c">05</div><h3>TikTok : le terrain est libre</h3><p>TikTok est la 1re source d’info produit pour 66 % des jeunes interrogés (Q3.b-1). IKEA France : 104,4 K abonnés, derrière Maisons du Monde (132,6 K) et @actionfrance (554,3 K) (V6).</p></div><div class="carte forte"><div class="num-c">06</div><h3>À corriger dans le dossier</h3><p>IKEA Family : 200 millions de membres, et non plus 150 (Q5.c-1). Mobilité : l’Insee national remplace l’étude Réunion (Q5.a-1). Le 79 % est confirmé mot pour mot (Q5.d).</p></div></div><div class="pied"><small>Chaque phrase reprend des lignes du tableau (id entre parenthèses). Les synthèses complètes de l’agent sont dans l’onglet « Synthèse » des Excel.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">11</span></div></section><section class="slide "><div class="sur">Esprit critique</div><div class="trait"></div><h1>Ses limites, et nos garde-fous</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g3">
+  <div class="carte"><div class="num-c">LIMITE</div><h3>Il peut mal lire</h3><p>Un modèle peut se tromper de chiffre ou de périmètre. Garde-fou : l’extrait exact est retrouvé dans la page par du code.</p></div>
+  <div class="carte"><div class="num-c">LIMITE</div><h3>Le web n’est pas le terrain</h3><p>Il ne remplace pas nos 12 entretiens ni le questionnaire. Garde-fou : la colonne « À creuser » liste ce qu’il reste à demander aux jeunes.</p></div>
+  <div class="carte"><div class="num-c">LIMITE</div><h3>Les chiffres vieillissent</h3><p>Prix et abonnés changent. Garde-fou : chaque ligne est datée ; on relance l’agent en double-clic.</p></div>
+  <div class="carte"><div class="num-c">LIMITE</div><h3>Sites fermés aux robots</h3><p>TikTok et Instagram bloquent la lecture automatique. Garde-fou : signalé « à contrôler à la main ».</p></div>
+  <div class="carte"><div class="num-c">ÉTHIQUE</div><h3>Aucune donnée personnelle</h3><p>Pas de compte, pas de formulaire, pas de profil individuel : seulement des pages publiques.</p></div>
+  <div class="carte forte"><div class="num-c">TRANSPARENCE</div><h3>Mention IA partout</h3><p>Chaque livrable dit qu’il a été produit par un agent IA, contrôlé automatiquement puis relu par l’équipe.</p></div>
+</div><div class="pied"><small>Charte d’usage de l’IA du module (mention de l’usage de l’IA dans chaque livrable).<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">12</span></div></section><section class="slide "><div class="sur">Mode d’emploi</div><div class="trait"></div><h1>Le relancer en 3 clics</h1><img class="logo" src="ikea-logo.png" alt="IKEA">
+<div class="g3 etapes">
+  <div class="carte"><div class="gros">1</div><h3>Double-clic</h3><p>« Lancer l’agent Fika.cmd » dans le dossier 07 Agent IA.</p></div>
+  <div class="carte"><div class="gros">2</div><h3>Choisir</h3><p>1 vérification, 2 veille, 3 les deux. Il travaille seul pendant 15 à 30 minutes et affiche chaque étape.</p></div>
+  <div class="carte"><div class="gros">3</div><h3>Ouvrir le tableau</h3><p>Le dossier « livrables » s’ouvre : Excel sourcé et daté, CSV, résumé Markdown.</p></div>
+</div>
+<div class="g2 bas">
+  <div class="carte"><div class="num-c">SANS RIEN INSTALLER</div><p>« Prompt à coller (ChatGPT ou Claude).md » : la même mission, en version copier-coller. Sans contrôleur : la vérification se fait à la main.</p></div>
+  <div class="carte"><div class="num-c">CE QU’IL FAUT</div><p>Python et Claude Code connecté à un compte Claude. Le journal de chaque lancement est gardé dans agent/journal.</p></div>
+</div><div class="pied"><small>Dossier : IKEA/07 Agent IA.<br>Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small><span class="num">13</span></div></section><section class="slide couv fin">
+  <div class="fin-t">Zéro chiffre<br><span>sans source.</span></div>
+  <div class="trait large"></div>
+  <p class="couv-p">Fika · l’agent de recherche IKÉASTRE</p>
+  <small class="couv-pied">Concept académique indépendant, non affilié à IKEA · B3CPD Ynov · équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · agent, analyse et slides réalisés avec l’aide de l’IA.</small>
+</section></body></html>

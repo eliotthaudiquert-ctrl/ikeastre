@@ -1,0 +1,13 @@
+Vidéo IKEA — « Des meubles pour tous les rebondissements » (1920x1080, 60 i/s, 45,7 s, -14 LUFS)
+Inspiration : reel fnmo.ai (Fenomeno) — même mécanique, rien n'est repris de leurs images.
+
+Musique : Vivaldi, Les Quatre Saisons, L'Été III. Presto — même morceau que l'inspi.
+  Enregistrement : The Modena Chamber Orchestra (Musopen), marqué domaine public sur Wikimedia Commons.
+Vidéos : Mixkit (licence gratuite, usage commercial, sans attribution) : 25578, 46377, 45735, 39536, 41325, 42245.
+Bruitages : Mixkit (même licence).
+Voix : neuronales edge-tts (Denise, Henri, Vivienne, Rémy).
+Polices : Archivo / Archivo Black (Google Fonts, OFL).
+Produits et prix : ikea.com/fr, relevés le 29/10/2026
+  FRAKTA grand sac 1 € · TRYGG saladier verre 28 cm 2,99 € · HUVUDSPELARE chaise gaming 79,99 €
+  SANDGRÄSMAL oreiller 65x65 4,49 € · KLIPPAN canapé 2 places 279 € · VESTMARKA matelas 140x200 169 €
+Projet source : C:\Users\eliot\Projets\Création et contenus\IKEA Reel\reel (Remotion)

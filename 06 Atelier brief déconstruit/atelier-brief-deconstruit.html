@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Atelier : le brief déconstruit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bleu:#0058A3; --jaune:#FFDA1A; --fond:#F5F3EE; --encre:#111; --gris:#5b5f66; }
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 720px; background: var(--fond); }
+  body { font-family: 'Noto Sans', sans-serif; color: var(--encre); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; width: 1280px; height: 720px; padding: 40px 72px 0; overflow: hidden; }
+  .trait { width: 44px; height: 6px; background: var(--jaune); border-radius: 3px; }
+  h1 { margin-top: 14px; font-size: 40px; font-weight: 800; color: var(--bleu); letter-spacing: -0.5px; line-height: 1.1; }
+  .sous { margin-top: 6px; font-size: 15px; color: var(--gris); }
+  .sous b { color: var(--encre); font-weight: 700; }
+  .logo { position: absolute; top: 36px; right: 72px; height: 42px; }
+  .grille { margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 228px 228px; gap: 16px; }
+  .carte { background: #fff; border-radius: 14px; border-top: 6px solid var(--jaune); padding: 13px 18px 10px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .num { font-size: 12px; font-weight: 800; color: var(--bleu); letter-spacing: 1px; }
+  h2 { margin-top: 5px; font-size: 19px; font-weight: 800; line-height: 1.2; }
+  p, li { font-size: 13px; line-height: 1.45; color: #2a2d33; }
+  .carte p { margin-top: 7px; }
+  .carte ul { margin-top: 6px; list-style: none; }
+  .carte li { position: relative; padding-left: 13px; margin-top: 3px; }
+  .carte li::before { content: ""; position: absolute; left: 0; top: 7.5px; width: 5px; height: 5px; border-radius: 50%; background: var(--bleu); }
+  b { font-weight: 700; color: var(--encre); }
+  .chute { display: inline-block; margin-top: 9px; padding: 3px 9px; border-radius: 4px; background: var(--jaune); font-size: 12px; font-weight: 700; color: var(--bleu); }
+  .cle { font-weight: 700; color: var(--bleu); }
+  .carte.forte { background: var(--bleu); border-top-color: var(--jaune); }
+  .carte.forte .num { color: var(--jaune); }
+  .carte.forte h2 { color: #fff; }
+  .carte.forte ol { margin-top: 6px; padding-left: 0; list-style: none; counter-reset: q; }
+  .carte.forte li { color: #e8eef7; padding-left: 20px; margin-top: 3px; position: relative; }
+  .carte.forte li::before { counter-increment: q; content: counter(q); position: absolute; left: 0; top: 1px; font-size: 12px; font-weight: 800; color: var(--jaune); }
+  .carte.forte b { color: #fff; }
+  .pied { position: absolute; left: 72px; right: 72px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+  .pied small { font-size: 10px; line-height: 1.45; color: #8a8d93; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="trait"></div>
+  <h1>Atelier : le brief déconstruit</h1>
+  <p class="sous">Notre problématique : <b>« Comment IKEA peut-il renforcer sa proximité avec la génération Z en associant accessibilité, rapport qualité-prix et communication humoristique adaptée à ses codes culturels ? »</b></p>
+  <img class="logo" src="ikea-logo.png" alt="IKEA">
+
+  <div class="grille">
+    <div class="carte">
+      <div class="num">01</div>
+      <h2>Ce que dit le brief</h2>
+      <p>IKEA veut que la Gen Z se sente proche de la marque&nbsp;: des magasins faciles d’accès, des prix à sa portée et un ton qui parle son langage.</p>
+      <span class="chute">Trois leviers : l’accès, le prix, l’humour.</span>
+    </div>
+
+    <div class="carte">
+      <div class="num">02</div>
+      <h2>L’objectif business</h2>
+      <p><span class="cle">Devenir le réflexe de la Gen Z à chaque emménagement.</span></p>
+      <ul>
+        <li><b>À mesurer :</b> la part des 18-25&nbsp;ans qui rachètent dans les 12 mois, la fréquentation des magasins compacts, les partages de la campagne.</li>
+        <li><b>L’enjeu :</b> 79&nbsp;% des ménages de moins de 30&nbsp;ans sont installés depuis moins de 4&nbsp;ans.</li>
+      </ul>
+    </div>
+
+    <div class="carte">
+      <div class="num">03</div>
+      <h2>Les cibles pressenties</h2>
+      <ul>
+        <li><b>Léa, 23&nbsp;ans :</b> alternante, studio de 24&nbsp;m², 700&nbsp;€, sans voiture.</li>
+        <li><b>Noah, 19&nbsp;ans :</b> BTS, chambre de 10&nbsp;m² en coloc, 350&nbsp;€, sans voiture.</li>
+        <li><b>Hypothèses :</b> le prix et la distance les freinent, l’humour les touche.</li>
+      </ul>
+      <span class="chute">Profils fictifs : 0 entretien à ce jour.</span>
+    </div>
+
+    <div class="carte">
+      <div class="num">04</div>
+      <h2>Le terrain concurrentiel</h2>
+      <ul>
+        <li><b>Sur le prix :</b> Action, Gifi, les marketplaces en ligne, la seconde main (1 meuble sur 4*).</li>
+        <li><b>Sur la proximité :</b> Conforama, But, Maisons du Monde en ville, la livraison à domicile.</li>
+        <li><b>Sur les codes Gen Z :</b> toutes les marques déjà drôles sur TikTok.</li>
+      </ul>
+    </div>
+
+    <div class="carte">
+      <div class="num">05</div>
+      <h2>Contraintes et risques</h2>
+      <ul>
+        <li><b>Budget :</b> ouvrir des magasins compacts et baisser les prix sans perdre de marge.</li>
+        <li><b>Délais :</b> les mèmes (le 67, l’aura farming) vieillissent vite.</li>
+        <li><b>Image :</b> l’humour qui tombe à plat, de faux produits pris pour des vrais.</li>
+        <li><b>Éthique :</b> des petits budgets poussés vers le jetable.</li>
+      </ul>
+    </div>
+
+    <div class="carte forte">
+      <div class="num">06</div>
+      <h2>Les questions à creuser</h2>
+      <ol>
+        <li>Combien ont un IKEA <b>accessible sans voiture</b> ?</li>
+        <li>Qu’est-ce qui bloque : le prix ou la livraison ?</li>
+        <li>L’humour fait-il acheter, ou seulement partager ?</li>
+        <li>Les budgets de 700&nbsp;€ et 350&nbsp;€ sont-ils réalistes ?</li>
+        <li><b>À revérifier :</b> mobilité, part de l’occasion.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="pied">
+    <small>Sources : oral IKEA × Gen Z, p. 1-3 (16/10/2026) · « Lire un brief IKEA – V2 » (13/10/2026) · Insee Première n°2090 (01/2026) · Ingka Group (01/06/2026). * Chiffre repris du brief, source à revérifier.<br>Concept académique indépendant, non affilié à IKEA · B3CPD, équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · Analyse préparée avec l’aide de l’IA.</small>
+  </div>
+</section>
+</body>
+</html>

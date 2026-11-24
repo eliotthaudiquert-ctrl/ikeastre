@@ -1,0 +1,34 @@
+# Dépendances et fichiers régénérables
+node_modules/
+**/.remotion/
+out/
+__pycache__/
+*.pyc
+07 Agent IA/agent/travail/cache/
+
+# Contenus tiers : on ne les redistribue pas dans un dépôt public
+# (reel de l'inspi fnmo.ai, rushs et bruitages Mixkit en brut)
+05 Campagne/IKEA Reel/inspi/
+05 Campagne/IKEA Reel/stock/
+05 Campagne/IKEA Reel/clips_orig/
+05 Campagne/IKEA Reel/reel/public/clips/
+05 Campagne/IKEA Reel/reel/public/stills/
+05 Campagne/IKEA Reel/reel/public/sfx/
+07 Agent IA/video/public/sfx/
+
+# Fichiers de travail lourds ou en double
+05 Campagne/IKEA Reel/freeze/
+05 Campagne/IKEA Reel/strips/
+05 Campagne/IKEA Reel/controle/
+05 Campagne/IKEA Reel/brut.mp4
+05 Campagne/IKEA Reel/final.mp4
+*.wav
+**/Doublons/
+IKEA - Versions finales/
+IKEA - Versions finales.zip
+*.lnk
+
+# Système
+Thumbs.db
+desktop.ini
+.DS_Store

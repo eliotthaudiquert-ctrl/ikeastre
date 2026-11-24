@@ -1,0 +1,342 @@
+{
+  "accepte": true,
+  "mission": "veille",
+  "nb_lignes": 38,
+  "lignes_valides": 38,
+  "statuts": {
+    "Relevé": 35,
+    "Non trouvé": 3
+  },
+  "erreurs": [],
+  "alertes": [
+    "V3.Maisons du Monde : date de la source inconnue",
+    "V5.IKEA : date de la source inconnue",
+    "V5.Conforama : date de la source inconnue",
+    "V5.But : date de la source inconnue",
+    "V6.IKEA : réseau social : extrait non vérifiable automatiquement, à contrôler à la main",
+    "V6.Maisons du Monde : réseau social : extrait non vérifiable automatiquement, à contrôler à la main",
+    "V6.Conforama : réseau social : extrait non vérifiable automatiquement, à contrôler à la main",
+    "V6.But : réseau social : extrait non vérifiable automatiquement, à contrôler à la main",
+    "V6.Action : réseau social : extrait non vérifiable automatiquement, à contrôler à la main",
+    "V6.Leboncoin : réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+  ],
+  "detail": [
+    {
+      "id": "V1.IKEA",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V1.Maisons du Monde",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V1.Conforama",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V1.But",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V1.Action",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V1.Leboncoin",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.IKEA",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.IKEA-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.Maisons du Monde",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.Conforama",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.But",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.Action",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V2.Leboncoin",
+      "verdict_extrait": "",
+      "score": null,
+      "http": null,
+      "problemes": []
+    },
+    {
+      "id": "V3.IKEA",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V3.Maisons du Monde",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": [
+        [
+          "alerte",
+          "date de la source inconnue"
+        ]
+      ]
+    },
+    {
+      "id": "V3.Conforama",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V3.But",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V3.Action",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V3.Leboncoin",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V4.IKEA",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V4.Maisons du Monde",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V4.Conforama",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V4.But",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V4.Action",
+      "verdict_extrait": "",
+      "score": null,
+      "http": null,
+      "problemes": []
+    },
+    {
+      "id": "V4.Leboncoin",
+      "verdict_extrait": "",
+      "score": null,
+      "http": null,
+      "problemes": []
+    },
+    {
+      "id": "V5.IKEA",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": [
+        [
+          "alerte",
+          "date de la source inconnue"
+        ]
+      ]
+    },
+    {
+      "id": "V5.Maisons du Monde",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V5.Conforama",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": [
+        [
+          "alerte",
+          "date de la source inconnue"
+        ]
+      ]
+    },
+    {
+      "id": "V5.Conforama-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V5.But",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": [
+        [
+          "alerte",
+          "date de la source inconnue"
+        ]
+      ]
+    },
+    {
+      "id": "V5.Action",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V5.Leboncoin",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "V6.IKEA",
+      "verdict_extrait": "non vérifiable (réseau social)",
+      "score": null,
+      "http": null,
+      "problemes": [
+        [
+          "alerte",
+          "réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+        ]
+      ]
+    },
+    {
+      "id": "V6.Maisons du Monde",
+      "verdict_extrait": "non vérifiable (réseau social)",
+      "score": null,
+      "http": null,
+      "problemes": [
+        [
+          "alerte",
+          "réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+        ]
+      ]
+    },
+    {
+      "id": "V6.Conforama",
+      "verdict_extrait": "non vérifiable (réseau social)",
+      "score": null,
+      "http": null,
+      "problemes": [
+        [
+          "alerte",
+          "réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+        ]
+      ]
+    },
+    {
+      "id": "V6.But",
+      "verdict_extrait": "non vérifiable (réseau social)",
+      "score": null,
+      "http": null,
+      "problemes": [
+        [
+          "alerte",
+          "réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+        ]
+      ]
+    },
+    {
+      "id": "V6.Action",
+      "verdict_extrait": "non vérifiable (réseau social)",
+      "score": null,
+      "http": null,
+      "problemes": [
+        [
+          "alerte",
+          "réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+        ]
+      ]
+    },
+    {
+      "id": "V6.Leboncoin",
+      "verdict_extrait": "non vérifiable (réseau social)",
+      "score": null,
+      "http": null,
+      "problemes": [
+        [
+          "alerte",
+          "réseau social : extrait non vérifiable automatiquement, à contrôler à la main"
+        ]
+      ]
+    }
+  ],
+  "date_controle": "2026-11-05"
+}

@@ -1,0 +1,24 @@
+{
+  "mission": "2",
+  "date": "2026-11-05",
+  "accepte": true,
+  "duree_min": 11.4,
+  "compteurs": {
+    "planifier": 18,
+    "agir": 138,
+    "observer": 138,
+    "verifier": 1
+  },
+  "outils": {
+    "Bash": 62,
+    "Write": 3,
+    "ToolSearch": 1,
+    "WebSearch": 52,
+    "WebFetch": 15,
+    "Grep": 1,
+    "Edit": 3,
+    "Read": 1
+  },
+  "boucles": 1,
+  "journal": "2026-11-05_1129_mission-2.md"
+}

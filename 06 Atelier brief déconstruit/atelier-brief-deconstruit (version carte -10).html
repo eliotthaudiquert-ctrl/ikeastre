@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Atelier : le brief déconstruit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bleu:#0058A3; --jaune:#FFDA1A; --fond:#F5F3EE; --encre:#111; --gris:#5b5f66; }
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 720px; background: var(--fond); }
+  body { font-family: 'Noto Sans', sans-serif; color: var(--encre); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; width: 1280px; height: 720px; padding: 52px 72px 0; overflow: hidden; }
+  .trait { width: 44px; height: 6px; background: var(--jaune); border-radius: 3px; }
+  h1 { margin-top: 14px; font-size: 44px; font-weight: 800; color: var(--bleu); letter-spacing: -0.5px; line-height: 1.1; }
+  .sous { margin-top: 6px; font-size: 15px; color: var(--gris); }
+  .sous b { color: var(--encre); font-weight: 700; }
+  .logo { position: absolute; top: 46px; right: 72px; height: 42px; }
+  .grille { margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 232px 232px; gap: 16px; }
+  .carte { background: #fff; border-radius: 14px; border-top: 6px solid var(--jaune); padding: 16px 20px 14px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .num { font-size: 12px; font-weight: 800; color: var(--bleu); letter-spacing: 1px; }
+  h2 { margin-top: 5px; font-size: 19px; font-weight: 800; line-height: 1.2; }
+  p, li { font-size: 13px; line-height: 1.45; color: #2a2d33; }
+  .carte p { margin-top: 7px; }
+  .carte ul { margin-top: 6px; list-style: none; }
+  .carte li { position: relative; padding-left: 13px; margin-top: 3px; }
+  .carte li::before { content: ""; position: absolute; left: 0; top: 7.5px; width: 5px; height: 5px; border-radius: 50%; background: var(--bleu); }
+  b { font-weight: 700; color: var(--encre); }
+  .chute { display: inline-block; margin-top: 9px; padding: 3px 9px; border-radius: 4px; background: var(--jaune); font-size: 12px; font-weight: 700; color: var(--bleu); }
+  .cle { font-weight: 700; color: var(--bleu); }
+  .carte.forte { background: var(--bleu); border-top-color: var(--jaune); }
+  .carte.forte .num { color: var(--jaune); }
+  .carte.forte h2 { color: #fff; }
+  .carte.forte ol { margin-top: 6px; padding-left: 0; list-style: none; counter-reset: q; }
+  .carte.forte li { color: #e8eef7; padding-left: 20px; margin-top: 3px; position: relative; }
+  .carte.forte li::before { counter-increment: q; content: counter(q); position: absolute; left: 0; top: 1px; font-size: 12px; font-weight: 800; color: var(--jaune); }
+  .carte.forte b { color: #fff; }
+  .pied { position: absolute; left: 72px; right: 72px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+  .pied small { font-size: 10px; line-height: 1.45; color: #8a8d93; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="trait"></div>
+  <h1>Atelier : le brief déconstruit</h1>
+  <p class="sous">Brief d’IKEA France : <b>« Nos clients de 18-25 ans ne reviennent pas après leur premier emménagement. On veut une carte étudiante à −10 %. »</b></p>
+  <img class="logo" src="ikea-logo.png" alt="IKEA">
+
+  <div class="grille">
+    <div class="carte">
+      <div class="num">01</div>
+      <h2>Ce que dit le brief</h2>
+      <p>Les 18-25 ans achètent chez IKEA pour leur premier logement, puis ne reviennent plus. IKEA pense qu’une carte étudiante à −10 % les fera revenir.</p>
+      <span class="chute">Le brief donne une solution, pas un problème.</span>
+    </div>
+
+    <div class="carte">
+      <div class="num">02</div>
+      <h2>L’objectif business</h2>
+      <p><span class="cle">Rester leur enseigne jusqu’au prochain emménagement.</span></p>
+      <ul>
+        <li><b>À mesurer :</b> la part des 18-25 ans qui rachètent dans les 12 mois après leur premier achat.</li>
+        <li><b>L’enjeu :</b> 79 % des ménages de moins de 30 ans sont installés depuis moins de 4 ans, dans un marché en recul (−1,8 % en 2025).</li>
+      </ul>
+    </div>
+
+    <div class="carte">
+      <div class="num">03</div>
+      <h2>Les cibles pressenties</h2>
+      <p>Les 18-25 ans étudiants, au moment de leur premier emménagement.</p>
+      <ul>
+        <li><b>Hypothèses non prouvées :</b> ils sont tous étudiants, ils partent à cause du prix, ils ont encore besoin de meubles ensuite.</li>
+        <li><b>Angle mort :</b> les alternants, les apprentis et les jeunes actifs.</li>
+      </ul>
+    </div>
+
+    <div class="carte">
+      <div class="num">04</div>
+      <h2>Le terrain concurrentiel</h2>
+      <ul>
+        <li><b>Directs :</b> Conforama, But, Maisons du Monde, Action, les marketplaces en ligne.</li>
+        <li><b>Indirects :</b> la seconde main (1 meuble sur 4 vendu d’occasion en France*), les meubles récupérés, les logements meublés.</li>
+        <li><b>IKEA lui-même :</b> IKEA Family existe déjà.</li>
+      </ul>
+    </div>
+
+    <div class="carte">
+      <div class="num">05</div>
+      <h2>Contraintes et risques</h2>
+      <ul>
+        <li><b>Budget :</b> −10 % aussi sur les achats qui auraient eu lieu sans remise.</li>
+        <li><b>Délais :</b> tout doit être prêt avant la rentrée.</li>
+        <li><b>Image :</b> une remise sur une marque déjà perçue comme pas chère.</li>
+        <li><b>Éthique :</b> données sur le statut étudiant (RGPD), non-étudiants exclus, meubles jetables.</li>
+      </ul>
+    </div>
+
+    <div class="carte forte">
+      <div class="num">06</div>
+      <h2>Les questions à creuser</h2>
+      <ol>
+        <li>Les 18-25 ans rachètent-ils <b>vraiment</b> moins ?</li>
+        <li>Pourquoi partent-ils : prix, distance, occasion ?</li>
+        <li>Quelle part des 18-25 ans est étudiante ?</li>
+        <li>−10 % pèse-t-il face au coût de livraison ?</li>
+        <li><b>À revérifier :</b> mobilité, occasion, IKEA Family.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="pied">
+    <small>Sources : « Lire un brief IKEA – V2 », p. 2-3 (13/10/2026) · Insee Première n°2090 (01/2026) · IPEA / CNEF / Ameublement français (03/02/2026). * Chiffre repris du brief, source à revérifier.<br>Concept académique indépendant, non affilié à IKEA · B3CPD, équipe Loris Demeaux, Tobias Ringot, Eliott Haudiquert · Analyse préparée avec l’aide de l’IA.</small>
+  </div>
+</section>
+</body>
+</html>

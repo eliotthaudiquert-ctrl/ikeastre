@@ -1,0 +1,11 @@
+* text=auto
+*.pdf binary
+*.pptx binary
+*.xlsx binary
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.mp3 binary
+*.ttf binary
+*.ogg binary
+*.cmd text eol=crlf

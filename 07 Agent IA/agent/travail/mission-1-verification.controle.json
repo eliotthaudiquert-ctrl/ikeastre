@@ -1,0 +1,269 @@
+{
+  "accepte": true,
+  "mission": "verification",
+  "nb_lignes": 35,
+  "lignes_valides": 35,
+  "statuts": {
+    "Relevé": 12,
+    "Confirmé": 13,
+    "Nuancé": 9,
+    "Infirmé": 1
+  },
+  "erreurs": [],
+  "alertes": [
+    "Q1.c-lyon-2 : date de la source inconnue"
+  ],
+  "detail": [
+    {
+      "id": "Q1.a-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.a-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.a-3",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.a-4",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.b-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.b-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.c-lyon-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.c-lyon-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": [
+        [
+          "alerte",
+          "date de la source inconnue"
+        ]
+      ]
+    },
+    {
+      "id": "Q1.c-lille-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q1.c-lille-2",
+      "verdict_extrait": "proche",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q2.a-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q2.a-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q2.b-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q2.b-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q3.a-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q3.a-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q3.b-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q3.b-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q3.b-3",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-lit",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-sommier",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-matelas",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-bureau",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-chaise",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-rangement",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.a-total",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.b-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q4.b-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.a-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.a-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.a-3",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.b",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.c-1",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.c-2",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    },
+    {
+      "id": "Q5.d",
+      "verdict_extrait": "exact",
+      "score": 1.0,
+      "http": 200,
+      "problemes": []
+    }
+  ],
+  "date_controle": "2026-11-05"
+}
