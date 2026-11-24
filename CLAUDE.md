@@ -24,15 +24,16 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 | Dossier | Contenu |
 |---|---|
 | `01 Consignes et cours` | Consigne EFN B3CPD ; cours Veille stratégique Session 1 (PDF) et modèle de grille de veille (Part 1) |
-| `02 Dossier et oral Gen Z` | Dossier, synthèse 5 slides, sources ; `Versions Codex (copies)` = dossier stratégique d'équipe `B3CPD_IKEA_Equipe.pdf` et variantes |
+| `02 Dossier et oral Gen Z` | Dossier, synthèse 5 slides, sources, `IKEA_Dossier-Complet_GenZ-Personas_V3.pdf` (Loris) ; `Versions Codex (copies)` = dossier stratégique d'équipe `B3CPD_IKEA_Equipe.pdf` et variantes |
 | `03 Personas` | Personas Léa et Noah en texte (les personas complets, dont Inès, sont dans les PDF du dossier 02) |
-| `04 Pilotage agile` | Kit de pilotage (charte, RACI, backlog) `B3CPD_IKEA_Kit_Pilotage_Agile.xlsx`, tableau des 37 livrables en 4 phases |
+| `04 Pilotage agile` | Kit de pilotage (charte, RACI, backlog) `B3CPD_IKEA_Kit_Pilotage_Agile.xlsx`, tableau des 37 livrables en 4 phases, dossier `IKEA_Pilotage-Agile_GenZ_V1.pdf` (Loris) |
 | `05 Campagne` | Vidéo « Des meubles pour tous les rebondissements » (`Vidéo IKEA/`) + projet Remotion (`IKEA Reel/reel`) |
 | `06 Atelier brief déconstruit` | Slide de l'atelier (HTML, PDF, PNG) |
 | `07 Agent IA` | Agent de recherche « Fika » : missions vérification + veille, livrables Excel, slides, vidéo. Voir son `LISEZ-MOI.md` |
 | `08 Segmentation` | Segmentation Gen Z (PDF + slides HTML + corpus chiffres/verbatims sourcés) ; `Première version (12-10-2026)` = 1re segmentation du marché IKEA (PPTX + PDF) |
-| `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits. Compléments MARKET : 5 dimensions, réponses aux 5 questions MARKET, plan de veille continue (question → décision) ; `Grille de veille (modèle du cours).xlsx` = la grille du prof remplie ; `python presentation.py` génère `Présentation veille Session 1.pdf` (11 slides pour l'oral, mêmes données) |
+| `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits. Compléments MARKET : 5 dimensions, réponses aux 5 questions MARKET, plan de veille continue (question → décision) ; `Grille de veille (modèle du cours).xlsx` = la grille du prof remplie ; `python presentation.py` génère `Présentation veille Session 1.pdf` (11 slides pour l'oral, mêmes données). `Version Loris (complément)` = autre grille faite le même jour (21 infos, angle Gen Z) : réservoir d'infos, la version de référence reste celle d'Eliott et Tobias |
 | `10 Hypothèses clients` | Fiche d'hypothèses tirées d'avis en ligne (HTML, imprimable), aucune validée : à tester auprès de vrais clients |
+| `11 Ciblage et positionnement (Loris)` | Dossier B3CPDM de Loris (positionnement, anti-persona, proposition de valeur, note d'arbitrage), version courte PV, kit crash-test, trame d'oral ; `Dossier de dépôt PFR` = index, vérification des sources et check-list des exigences des séances 1-5. Personas = profils de travail, pas issus d'entretiens |
 | `Avancement.html` + `avancement.js` | Page d'avancement du projet et ses données |
 | `IKEA - Envoi livrables PFR` | Les livrables PFR envoyés le 23/11/2026 |
 

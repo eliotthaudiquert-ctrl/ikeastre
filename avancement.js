@@ -5,7 +5,7 @@
 
 window.AVANCEMENT = {
   maj: "24/11/2026",
-  par: "Tobias",
+  par: "Loris",
 
   prochaine: {
     titre: "Choisir la brique digitale du magasin compact",
@@ -30,10 +30,10 @@ window.AVANCEMENT = {
     { num: "01", titre: "Segmentation", etat: "fait", lien: "IKEA - Envoi livrables PFR/01 Segmentation IKEA Gen Z.pdf" },
     { num: "02", titre: "Personas", etat: "fait", lien: "IKEA - Envoi livrables PFR/02 Personas IKEA Gen Z.pdf" },
     { num: "03", titre: "Veille concurrentielle sourcée", etat: "fait", lien: "IKEA - Envoi livrables PFR/03 Veille concurrentielle sourcee.xlsx" },
-    { num: "04", titre: "Positionnement", etat: "en cours", note: "Pas de version dédiée : couvert en partie par le dossier stratégique (mapping p. 6-7).", lien: "IKEA - Envoi livrables PFR/03-06 Dossier strategique (mapping, canvas, promesse).pdf" },
+    { num: "04", titre: "Positionnement", etat: "à confirmer", note: "Version Loris (dossier B3CPDM du 23/11) à valider à trois ; le mapping d'équipe reste dans le dossier stratégique p. 6-7.", lien: "11 Ciblage et positionnement (Loris)/IKEASTRE_B3CPDM_Ciblage-Positionnement_2026-11-23.pdf" },
     { num: "05", titre: "Canvas", etat: "fait", note: "Dans le dossier stratégique, p. 12.", lien: "IKEA - Envoi livrables PFR/03-06 Dossier strategique (mapping, canvas, promesse).pdf" },
     { num: "06", titre: "Promesse", etat: "fait", note: "Dans le dossier stratégique, p. 13.", lien: "IKEA - Envoi livrables PFR/03-06 Dossier strategique (mapping, canvas, promesse).pdf" },
-    { num: "07", titre: "Note d'arbitrage", etat: "à faire", note: "Pas encore de version dédiée." }
+    { num: "07", titre: "Note d'arbitrage", etat: "à confirmer", note: "Version Loris dans le dossier B3CPDM du 23/11, à valider à trois.", lien: "11 Ciblage et positionnement (Loris)/IKEASTRE_B3CPDM_Ciblage-Positionnement_2026-11-23.pdf" }
   ],
 
   campagne: [
@@ -55,6 +55,8 @@ window.AVANCEMENT = {
   ],
 
   documents: [
+    ["Dossier ciblage et positionnement (Loris)", "11 Ciblage et positionnement (Loris)/IKEASTRE_B3CPDM_Ciblage-Positionnement_2026-11-23.pdf"],
+    ["Veille stratégique, version complémentaire (Loris)", "09 Veille stratégique/Version Loris (complément)/IKEASTRE_Veille-strategique_Grille_2026-11-24.pdf"],
     ["Dossier stratégique d'équipe", "02 Dossier et oral Gen Z/Versions Codex (copies)/B3CPD_IKEA_Equipe.pdf"],
     ["Synthèse en 5 slides", "02 Dossier et oral Gen Z/IKEA_GenZ_Synthese_5_slides_v2.pdf"],
     ["Segmentation Gen Z", "08 Segmentation/Segmentation IKEA Gen Z.pdf"],
@@ -68,6 +70,7 @@ window.AVANCEMENT = {
   ],
 
   journal: [
+    { date: "24/11/2026", qui: "Loris", quoi: "Ajout des versions finales de Loris : dossier ciblage et positionnement (04 et 07, à valider), PV courte, kit crash-test, oral, dossier Gen Z V3, pilotage agile, et une veille Session 1 en complément (21 infos, angle Gen Z, sans remplacer celle d'Eliott et Tobias)." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Ajout du cours Veille stratégique Session 1 (PDF) dans 01 Consignes et cours." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Présentation orale de la veille Session 1 : 11 slides en PDF (une idée par slide), générée depuis veille.json." },
     { date: "24/11/2026", qui: "Tobias", quoi: "Veille Session 1, compléments MARKET : 5 dimensions, 5 questions MARKET, plan de veille continue (PDF de 9 à 12 pages) et grille du cours remplie." },
