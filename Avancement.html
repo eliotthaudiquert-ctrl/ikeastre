@@ -124,7 +124,7 @@ footer .wrap { padding-top: 16px; padding-bottom: 32px; font-size: 12px; color: 
   if (!A) { app.innerHTML = '<p style="padding:40px 0">Fichier avancement.js introuvable.</p>'; return; }
 
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
-    .replace(/ (%|»|:|;|\?|!)/g, ' $1').replace(/« /g, '« ');
+    .replace(/ (%|»|:|;|\?|!)/g, ' $1').replace(/« /g, '« ').replace(/(Sessions?|p\.) (\d)/g, '$1 $2');
   const cls = e => ({ 'fait': 'fait', 'en cours': 'en-cours', 'à faire': 'a-faire', 'à confirmer': 'a-confirmer' }[e] || 'a-faire');
   const label = e => e.charAt(0).toUpperCase() + e.slice(1);
   const etat = e => `<span class="etat ${cls(e)}">${esc(label(e))}</span>`;
