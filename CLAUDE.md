@@ -41,3 +41,5 @@ Pas dans le dépôt (droits ou poids) : reel d'inspiration, rushs et bruitages M
 
 ## Avancement et journal
 L'état de tous les livrables, la prochaine étape, ce qui est en attente et le journal sont dans **`avancement.js`**, affiché par **`Avancement.html`** (double-clic pour voir où on en est). C'est la seule source pour l'avancement : ne pas recopier ces infos ici.
+
+En ligne : **https://ikeastre.vercel.app** (page seule, liens vers les fichiers sur GitHub). Mise à jour : modifier `avancement.js` puis push. Tant que Vercel n'est pas relié au dépôt GitHub, c'est Eliott qui redéploie (`vercel deploy --prod` depuis le dossier, `.vercelignore` limite l'envoi à la page).
