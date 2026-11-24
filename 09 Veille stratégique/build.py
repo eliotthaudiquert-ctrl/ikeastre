@@ -1,6 +1,7 @@
 """Génère la veille stratégique (Session 1) à partir de veille.json :
 - Veille stratégique IKEA compacts.xlsx (grille de travail)
 - veille.html puis Veille stratégique IKEA compacts.pdf (DA de groupe, pages 16:9)
+- Grille de veille (modèle du cours).xlsx : la grille du cours remplie (modèle dans 01 Consignes et cours)
 Usage : python build.py"""
 import html
 import json
@@ -102,7 +103,72 @@ def excel():
     w3.column_dimensions["A"].width = 26
     w3.column_dimensions["B"].width = 22
     w3.column_dimensions["C"].width = 14
+    def feuille(titre, entetes, lignes, haut=60):
+        w = wb.create_sheet(titre)
+        for i, (t, larg) in enumerate(entetes, 1):
+            c = w.cell(1, i, t)
+            c.font, c.fill, c.alignment = f_tete, PatternFill("solid", fgColor=BLEU), wrap
+            w.column_dimensions[get_column_letter(i)].width = larg
+        for r, vals in enumerate(lignes, 2):
+            for i, v in enumerate(vals, 1):
+                c = w.cell(r, i, v)
+                c.font, c.alignment, c.border = f_base, wrap, filet
+            w.cell(r, 1).font = Font(name="Noto Sans", size=10, bold=True)
+            w.row_dimensions[r].height = haut
+        w.freeze_panes = "B2"
+        return w
+
+    feuille("5 dimensions", [("Dimension", 22), ("Évolution à surveiller", 40), ("Exemple concret", 60),
+                             ("Impact pour le projet", 50), ("Sources", 40)],
+            [[x["dimension"], x["evolution"], x["exemple"], x["impact"], " ; ".join(x["sources"])] for x in D["dimensions"]]
+            + [["La plus stratégique", D["dimensions_choix"], "", "", ""]], 75)
+    feuille("Regard MARKET", [("Question MARKET", 34), ("Notre réponse", 90), ("Sources", 45)],
+            [[x["question"], x["reponse"], " ; ".join(x["sources"])] for x in D["regard_market"]], 90)
+    feuille("Plan de veille", [("Question de veille", 36), ("Ce qu'on surveille", 44), ("Sources à suivre", 34),
+                               ("Fréquence", 20), ("Décision éclairée", 40)],
+            [[x["question"], x["surveiller"], x["sources"], x["frequence"], x["decision"]] for x in D["plan_veille"]]
+            + [["Prompt de veille à réutiliser", D["prompt_veille"], "", "", ""]], 70)
+    feuille("Sources concurrence", [("Organisme", 30), ("Titre", 50), ("Date", 13), ("Lien", 50),
+                                    ("Extrait exact", 60), ("Référence", 36)],
+            [[x["organisme"], x["titre"], x["date"], x["url"], x["extrait"], x["ref"]] for x in D["sources_concurrence"]], 45)
     out = ICI / f"{NOM}.xlsx"
+    wb.save(out)
+    return out
+
+
+def grille_cours():
+    """Remplit la grille d'exemple du cours (Part 1) en gardant sa mise en forme d'origine."""
+    from copy import copy
+    from openpyxl import load_workbook
+    from openpyxl.styles import Alignment
+    modele = ICI.parent / "01 Consignes et cours" / "Part1 - Exemple grille veille strat.xlsx"
+    wb = load_workbook(modele)
+    ws = wb.active
+    ws["B5"] = "Grille de travail · Projet IKÉASTRE (magasins IKEA compacts × 18-29 ans) · regard MARKET · " + D["date"]
+    gabarit = [copy(ws.cell(8, c)._style) for c in range(2, 7)]
+    tete = [copy(ws.cell(8, 2)._style)]
+    ws.delete_rows(8, ws.max_row - 7)
+    r = 8
+    for ch in CHAMPS:
+        ls = [l for l in D["lignes"] if l["champ"] == ch]
+        debut = r
+        for l in ls:
+            s = l["source"]
+            vals = [ch, f"[{l['nature']}] {l['info']}", f"{s['organisme']}, « {s['titre']} », {s['date']}\n{s['url']}",
+                    l["critique"], l["impact"]]
+            for i, v in enumerate(vals):
+                c = ws.cell(r, 2 + i, v)
+                c._style = copy(gabarit[i])
+                c.alignment = Alignment(wrap_text=True, vertical="top")
+            ws.row_dimensions[r].height = 150
+            r += 1
+        if r - 1 > debut:
+            ws.merge_cells(start_row=debut, start_column=2, end_row=r - 1, end_column=2)
+        ws.cell(debut, 2)._style = copy(tete[0])
+        ws.cell(debut, 2).alignment = Alignment(wrap_text=True, vertical="top")
+    for col, larg in zip("BCDEF", (19, 46, 40, 44, 46)):
+        ws.column_dimensions[col].width = larg
+    out = ICI / "Grille de veille (modèle du cours).xlsx"
     wb.save(out)
     return out
 
@@ -163,6 +229,15 @@ table.veille .c-q { color: var(--gris-texte); font-style: italic; }
 .legend p { max-width: 330px; }
 ol.q { padding-left: 22px; }
 ol.q li { font-size: 15.5px; margin-bottom: 9px; color: var(--noir); }
+table.veille .info-s { color: var(--noir); font-weight: 600; }
+table.dim td, table.plan td { font-size: 12px; padding: 8px 10px; }
+table.dim td { padding: 7px 9px; line-height: 1.36; }
+table.dim .small { font-size: 10.5px; }
+.mk { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.mk div { border-top: 4px solid var(--bleu); padding-top: 10px; }
+.mk .n { font-size: 12px; font-weight: 700; color: var(--gris-doux); }
+.mk h3 { font-size: 14px; margin: 2px 0 8px; min-height: 38px; }
+.mk p { font-size: 12.5px; }
 .chiffre { font-size: 46px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
 """
 
@@ -178,7 +253,7 @@ def html_doc():
         ("Comment les jeunes préparent leurs achats", "L'IA et les réseaux sociaux deviennent des portes d'entrée, et la loi encadre déjà les assistants IA.", par["Évolutions des usages"] + par["Réglementation"], "Usages · Réglementation"),
         ("Ce qui pourrait changer la donne d'ici 2030", "Trois indices encore émergents : à surveiller, pas à prendre pour acquis.", par["Signaux faibles"], "Signaux faibles"),
     ]
-    total = 3 + len(pages_t)
+    total = 6 + len(pages_t)
     cx = D["contexte"]
     chips = "".join(
         f'<div class="champ"><span class="n">{i:02d}</span><b>{e(c)}</b><span class="k">{len(par[c])} information{"s" if len(par[c]) > 1 else ""}</span></div>'
@@ -213,6 +288,31 @@ def html_doc():
                '<p><b style="background:#fffbe0;padding:1px 4px">Impact</b><br>Ce que l\'information change pour les magasins compacts.</p>'
                f'</div></div>{FOOT}</section>')
     corps = "".join(page_table(t, e(ld), ls, i, total, cr) for i, (t, ld, ls, cr) in enumerate(pages_t, 3))
+    n = 3 + len(pages_t)
+    corps += (f'<section class="slide">{top(n, total, "5 dimensions")}<div class="body">'
+              f'<div class="eyebrow bleu">Observer son environnement</div><h1 class="h">Les 5 dimensions qui pèsent sur notre projet</h1>'
+              f'<p class="lead s"><b>{e(D["dimensions_choix"])}</b></p>'
+              f'<table class="veille dim mt12"><thead><tr><th style="width:13%">Dimension</th><th style="width:21%">Évolution à surveiller</th>'
+              f'<th style="width:38%">Exemple concret (sources de la grille)</th><th style="width:28%">Impact pour le projet</th></tr></thead><tbody>'
+              + "".join(f'<tr><td><b>{e(x["dimension"])}</b></td><td class="info-s">{e(x["evolution"])}</td>'
+                        f'<td>{e(x["exemple"])}<br><span class="small">{e(" · ".join(x["sources"]))}</span></td>'
+                        f'<td class="c-imp">{e(x["impact"])}</td></tr>' for x in D["dimensions"])
+              + f'</tbody></table></div>{FOOT}</section>')
+    corps += (f'<section class="slide">{top(n + 1, total, "Regard MARKET")}<div class="body">'
+              f'<div class="eyebrow bleu">Regard marché et stratégie</div><h1 class="h">Nos réponses aux 5 questions MARKET</h1>'
+              f'<p class="lead s">Ce que la veille nous apprend sur la cible, la concurrence et l\'attractivité des magasins compacts.</p>'
+              f'<div class="mk mt16">'
+              + "".join(f'<div><span class="n">0{i}</span><h3>{e(x["question"])}</h3><p>{e(x["reponse"])}</p>'
+                        f'<p class="small mt8">{e(" · ".join(x["sources"]))}</p></div>' for i, x in enumerate(D["regard_market"], 1))
+              + f'</div></div>{FOOT}</section>')
+    corps += (f'<section class="slide">{top(n + 2, total, "Veille continue")}<div class="body">'
+              f'<div class="eyebrow bleu">Organisée · continue · décisionnelle</div><h1 class="h">Ce qu\'on continue de surveiller, et pour quelle décision</h1>'
+              f'<p class="lead s">Une information n\'a de valeur que si elle éclaire une décision : chaque question de veille est reliée à un choix du dossier.</p>'
+              f'<table class="veille plan mt12"><thead><tr><th style="width:22%">Question de veille</th><th style="width:24%">Ce qu\'on surveille</th>'
+              f'<th style="width:18%">Sources à suivre</th><th style="width:12%">Fréquence</th><th style="width:24%">Décision éclairée</th></tr></thead><tbody>'
+              + "".join(f'<tr><td class="info-s">{e(x["question"])}</td><td>{e(x["surveiller"])}</td><td>{e(x["sources"])}</td>'
+                        f'<td>{e(x["frequence"])}</td><td class="c-imp">{e(x["decision"])}</td></tr>' for x in D["plan_veille"])
+              + f'</tbody></table><p class="small mt12"><b>Prompt de veille à réutiliser :</b> « {e(D["prompt_veille"])} »</p></div>{FOOT}</section>')
     fin = (f'<section class="slide">{top(total, total, "À creuser")}<div class="body">'
            f'<div class="eyebrow bleu">Prochaines recherches</div><h1 class="h">Ce qu\'il nous reste à vérifier</h1>'
            f'<p class="lead s">Questions ouvertes pour la session 2 (qualifier les tendances et construire la synthèse décisionnelle).</p>'
@@ -228,7 +328,11 @@ def html_doc():
 
 
 def pdf(src):
-    chrome = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    candidats = [r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+                 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+                 "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+                 "/usr/bin/google-chrome"]
+    chrome = next(c for c in candidats if Path(c).exists())
     out = ICI / f"{NOM}.pdf"
     subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=8000",
                     f"--print-to-pdf={out}", src.as_uri()], check=True, capture_output=True)
@@ -238,6 +342,7 @@ def pdf(src):
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8")
     print("Excel :", excel().name)
+    print("Grille:", grille_cours().name)
     h = ICI / "veille.html"
     h.write_text(html_doc(), encoding="utf-8")
     print("HTML  :", h.name)

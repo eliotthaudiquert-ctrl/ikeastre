@@ -169,5 +169,164 @@
     "Chiffre à jour de l'empreinte du numérique (mise à jour ADEME-Arcep de janvier 2025).",
     "Source représentative sur les réseaux sociaux des 18-29 ans, pour remplacer le sondage Diplomeo.",
     "Normes d'accessibilité applicables à un magasin compact et à ses bornes."
-  ]
+  ],
+  "dimensions": [
+    {
+      "dimension": "Concurrentielle",
+      "evolution": "Les concurrents se rapprochent eux aussi des clients.",
+      "exemple": "But ouvre des magasins de 1 200 à 1 500 m² (en périphérie) ; Action compte 900 magasins en France et s'installe en centre de Paris ; Leboncoin est le 2e site e-commerce français.",
+      "impact": "Le magasin compact n'est pas une différence en soi : il faut une raison de venir chez IKEA plutôt qu'ailleurs.",
+      "sources": [
+        "Franchise Magazine, 30/04/2026",
+        "Action, 15/12/2025",
+        "Le Bonbon, 02/09/2025",
+        "Fevad / Médiamétrie via Ecommerce Nation, 24/03/2026"
+      ]
+    },
+    {
+      "dimension": "Technologique",
+      "evolution": "L'IA et la réalité augmentée entrent dans la préparation des achats.",
+      "exemple": "31 % des cyberacheteurs utilisent déjà l'IA générative pour acheter ; IKEA propose IKEA Kreativ pour tester des meubles dans sa pièce scannée.",
+      "impact": "La brique digitale peut prolonger un magasin qui expose peu : on voit le reste de la gamme chez soi.",
+      "sources": [
+        "Fevad / Odoxa via KPMG, 09/2026",
+        "IKEA France, consulté le 24/11/2026"
+      ]
+    },
+    {
+      "dimension": "Sociétale",
+      "evolution": "Les jeunes bougent souvent, n'ont pas toujours de voiture et achètent d'occasion.",
+      "exemple": "79 % des ménages de moins de 30 ans sont dans leur logement depuis moins de 4 ans ; plus d'un tiers n'a pas de voiture ; un meuble sur quatre vendu serait d'occasion.",
+      "impact": "Proximité réelle (transports, retrait, livraison) et seconde vie doivent faire partie de l'offre.",
+      "sources": [
+        "Insee, 21/01/2026",
+        "Insee, 25/06/2026",
+        "Xerfi, 31/08/2026 (à corroborer)"
+      ]
+    },
+    {
+      "dimension": "Réglementaire",
+      "evolution": "L'accessibilité numérique et la transparence de l'IA sont devenues obligatoires.",
+      "exemple": "Directive accessibilité en vigueur depuis le 28/06/2025 ; AI Act : obligation de dire qu'on parle à une IA depuis le 02/08/2026 ; RGPD si on utilise la localisation.",
+      "impact": "Ces obligations sont des lignes de budget dès le scénario minimal, pas des options.",
+      "sources": [
+        "Entreprendre Service-Public, 27/11/2025",
+        "Commission européenne, 02/08/2026"
+      ]
+    },
+    {
+      "dimension": "Sectorielle / économique",
+      "evolution": "Le meuble neuf recule pendant que le commerce en ligne progresse.",
+      "exemple": "Meuble : 13,6 Md€ en 2025 (-1,8 %, après -5,1 % en 2024). E-commerce : 196,4 Md€ en 2025 (+7 %).",
+      "impact": "Le compact doit vivre avec le site (retrait, livraison) et se justifier par le coût complet, pas par la taille de la gamme.",
+      "sources": [
+        "IPEA / L'Ameublement français, 03/02/2026",
+        "Fevad via KPMG, 09/2026"
+      ]
+    }
+  ],
+  "dimensions_choix": "La plus stratégique pour nous : la dimension concurrentielle. Les tendances sociétales justifient le format compact, mais But, Conforama et Action vont dans la même direction ; c'est elle qui oblige à définir ce qu'IKEA apporte en plus.",
+  "regard_market": [
+    {
+      "question": "Quels comportements évoluent chez notre cible ?",
+      "reponse": "Les 18-29 ans déménagent souvent, plus d'un tiers des ménages de moins de 30 ans n'a pas de voiture, et ils préparent leurs achats sur Instagram, Snapchat, TikTok et de plus en plus avec l'IA.",
+      "sources": [
+        "Insee, 21/01/2026 et 25/06/2026",
+        "Diplomeo / BDM, 20/03/2025",
+        "Fevad / Odoxa via KPMG, 09/2026"
+      ]
+    },
+    {
+      "question": "Quelles attentes émergent ?",
+      "reponse": "Ce que les données laissent penser, à confirmer sur le terrain : un coût total lisible (transport compris), la possibilité d'acheter ou revendre d'occasion, et un magasin joignable sans voiture.",
+      "sources": [
+        "Xerfi, 31/08/2026",
+        "Insee, 25/06/2026",
+        "Personas Léa et Noah (hypothèses de travail)"
+      ]
+    },
+    {
+      "question": "Quelles stratégies concurrentes observer ?",
+      "reponse": "But et Conforama passent aux petits formats mais restent en périphérie. Action mise sur la proximité et le prix bas (900 magasins, centre de Paris) et compte 554 K abonnés TikTok contre 104 K pour IKEA France. Les offres étudiantes des concurrents sont saisonnières (Conforama : 50 € dès 250 €, de juillet à septembre 2026). Leboncoin lève le frein du transport des meubles (Livraison XL dès 19,49 €).",
+      "sources": [
+        "Franchise Magazine, 30/04/2026",
+        "Action, 15/12/2025",
+        "TikTok, relevé du 05/11/2026",
+        "Bonne Promo, 04/07/2026",
+        "Ecommerce Nation, 05/05/2025"
+      ]
+    },
+    {
+      "question": "Quelles opportunités de différenciation ?",
+      "reponse": "Réunir dans un même lieu de proximité ce que les concurrents proposent séparément : la reprise et la revente IKEA (seconde vie), la visualisation chez soi (Kreativ) et un retrait ou une livraison bon marché (point relais à 2 € pour IKEA Family, 7 € sinon).",
+      "sources": [
+        "IKEA France, consulté le 06/11/2026 et le 24/11/2026",
+        "IKEA France, relevé du 05/11/2026"
+      ]
+    },
+    {
+      "question": "Quels facteurs peuvent influencer l'attractivité du projet ?",
+      "reponse": "Pour : déménagements fréquents, essor de l'occasion, progression du digital. Contre : marché du meuble neuf en recul, concurrents en petits formats, compact difficile d'accès s'il reste en zone commerciale. À surveiller : arrivée des agents d'achat IA et du social commerce.",
+      "sources": [
+        "IPEA, 03/02/2026",
+        "Autorité de la concurrence, 17/07/2026",
+        "TikTok newsroom, 03/2025"
+      ]
+    }
+  ],
+  "sources_concurrence": [
+    {"organisme": "Action (communiqué)", "titre": "Action opens its 900th store in France", "date": "2025-12-15", "url": "https://company.action.com/?p=5622", "extrait": "Action opens a store in Carpiquet, near Caen (Normandie), bringing its total number of stores in France to 900", "ref": "03 Veille concurrentielle sourcée, ligne V1.Action"},
+    {"organisme": "Le Bonbon", "titre": "Le premier magasin Action du centre de Paris a ouvert ses portes", "date": "2025-09-02", "url": "https://www.lebonbon.fr/paris/news/premier-magasin-action-centre-paris-ouvert-portes/", "extrait": "L'enseigne discount Action a ouvert son premier magasin au centre de Paris, à deux pas de la place de la Bastille. Ce dernier vient compléter les trois autres boutiques déjà présentes dans le 19e et 15e.", "ref": "03 Veille concurrentielle sourcée, ligne V2.Action"},
+    {"organisme": "Ecommerce Nation (baromètre Fevad / Médiamétrie)", "titre": "Top e-commerce T4 2025 : Fnac surprend, Shein trébuche… ce que cache le nouveau classement FEVAD", "date": "2026-03-24", "url": "https://www.ecommerce-nation.fr/top-ecommerce-france-t4-2025-fnac-amazon-temu-shein-fevad/", "extrait": "Derrière, Leboncoin reste solidement installé à la deuxième place avec 30,5 millions de visiteurs .", "ref": "03 Veille concurrentielle sourcée, ligne V1.Leboncoin"},
+    {"organisme": "Ecommerce Nation", "titre": "Leboncoin et Relais Colis lancent la Livraison XL pour les objets volumineux", "date": "2025-05-05", "url": "https://www.ecommerce-nation.fr/actualites-leboncoin-relais-colis-livraison-xl", "extrait": "Cette offre permet désormais l’expédition d’objets volumineux, meubles, électroménager ou encore literie, à travers toute la France, via des solutions de livraison adaptées, à partir de 19,49€.", "ref": "03 Veille concurrentielle sourcée, ligne V3.Leboncoin"},
+    {"organisme": "IKEA France", "titre": "Livraison : options, tarifs et délais de livraison - IKEA", "date": "2026-11-05", "url": "https://www.ikea.com/fr/fr/customer-service/services/delivery/", "extrait": "Prix IKEA Family ou Réseau IKEA Pro : 2 €*. Devenez membre du Programme de fidélité IKEA Family. ou Réseau IKEA Pro Prix non membre : 7 €* .", "ref": "03 Veille concurrentielle sourcée, ligne V3.IKEA"},
+    {"organisme": "Bonne Promo", "titre": "Promo Conforama étudiant 50€ offerts meuble décoration 2026", "date": "2026-07-04", "url": "https://www.bonne-promo.com/odr/conforama/7772/promo-conforama-bon-plan-etudiant-50e-offerts-des-250e-achat-meuble-deco", "extrait": "Bon plan Conforama valable du mercredi 01 juillet 2026 au mercredi 30 septembre 2026 Profitez d’un bon plan étudiant chez Conforama : 50€ offerts dès 250€ d’achat dans les rayons meubles, canapés, literie et décoration.", "ref": "03 Veille concurrentielle sourcée, ligne V4.Conforama"},
+    {"organisme": "TikTok (@ikeafrance)", "titre": "TikTok Embed – ikeafrance", "date": "2026-11-05", "url": "https://www.tiktok.com/embed/@ikeafrance", "extrait": "ikeafrance 10 Following 104.4K Followers 1.5M Likes Vous inspirer, au quotidien", "ref": "03 Veille concurrentielle sourcée, ligne V6.IKEA"},
+    {"organisme": "TikTok (@actionfrance)", "titre": "TikTok Embed – actionfrance", "date": "2026-11-05", "url": "https://www.tiktok.com/embed/@actionfrance", "extrait": "actionfrance 9 Following 554.3K Followers 1.3M Likes Les meilleurs articles au prix le plus bas", "ref": "03 Veille concurrentielle sourcée, ligne V6.Action"}
+  ],
+  "plan_veille": [
+    {
+      "question": "Où et sous quelle forme IKEA ouvre-t-il ses magasins compacts ?",
+      "surveiller": "Villes annoncées, emplacement (centre ou zone commerciale), taille, services proposés.",
+      "sources": "Communiqués IKEA France, Le Journal des Entreprises, LSA",
+      "frequence": "Mensuelle",
+      "decision": "Choisir la ville et le magasin où situer notre expérience."
+    },
+    {
+      "question": "Que font les concurrents pour la proximité et pour les jeunes ?",
+      "surveiller": "Ouvertures de petits formats (But, Conforama, Action), offres étudiantes, prix de livraison et de retrait.",
+      "sources": "Franchise Magazine, sites des enseignes, LSA",
+      "frequence": "Mensuelle, et chaque semaine de juillet à septembre (rentrée)",
+      "decision": "Fixer le contenu et le prix de notre offre jeunes."
+    },
+    {
+      "question": "Comment les 18-29 ans préparent-ils leurs achats de meubles ?",
+      "surveiller": "Usage de l'IA pour acheter, réseaux utilisés, achat dans TikTok Shop.",
+      "sources": "Baromètres Fevad, Médiamétrie, études Diplomeo / BDM",
+      "frequence": "Trimestrielle",
+      "decision": "Choisir les canaux de la campagne et la forme de la brique digitale."
+    },
+    {
+      "question": "L'occasion gagne-t-elle du terrain chez les jeunes ?",
+      "surveiller": "Part de l'occasion dans le meuble, arrivée d'IKEA Preowned en France, offres de Leboncoin.",
+      "sources": "IPEA, Xerfi, newsroom IKEA, RetailDetail",
+      "frequence": "Trimestrielle",
+      "decision": "Intégrer ou non la reprise et la revente dans le magasin compact."
+    },
+    {
+      "question": "Quelles règles s'appliquent à notre brique digitale ?",
+      "surveiller": "Contrôles de la directive accessibilité, calendrier de l'AI Act, recommandations CNIL sur la géolocalisation.",
+      "sources": "Entreprendre Service-Public, Commission européenne, CNIL",
+      "frequence": "À chaque nouvelle échéance (alerte)",
+      "decision": "Chiffrer la conformité dans les deux scénarios budgétaires."
+    },
+    {
+      "question": "Les agents d'achat IA arrivent-ils en France ?",
+      "surveiller": "Lancements en France, part du trafic marchand venant des agents.",
+      "sources": "Autorité de la concurrence, Fevad / KPMG",
+      "frequence": "Semestrielle",
+      "decision": "Réserver ou non au scénario ambitieux un catalogue lisible par les agents IA."
+    }
+  ],
+  "prompt_veille": "Identifie les évolutions qui pourraient changer la façon dont les 18-29 ans s'équipent en meubles en France d'ici 2030, en particulier autour des magasins de proximité. Pour chaque évolution, propose des mots-clés de recherche, des sources fiables à consulter et des éléments pour vérifier son importance. Distingue les tendances documentées des signaux encore émergents. Ne donne aucun chiffre sans organisme, date et lien."
 }

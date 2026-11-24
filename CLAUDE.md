@@ -23,7 +23,7 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 ## Structure du dossier
 | Dossier | Contenu |
 |---|---|
-| `01 Consignes et cours` | Consigne EFN B3CPD |
+| `01 Consignes et cours` | Consigne EFN B3CPD ; modèle de grille de veille du cours (Part 1) |
 | `02 Dossier et oral Gen Z` | Dossier, synthèse 5 slides, sources ; `Versions Codex (copies)` = dossier stratégique d'équipe `B3CPD_IKEA_Equipe.pdf` et variantes |
 | `03 Personas` | Personas Léa et Noah en texte (les personas complets, dont Inès, sont dans les PDF du dossier 02) |
 | `04 Pilotage agile` | Kit de pilotage (charte, RACI, backlog) `B3CPD_IKEA_Kit_Pilotage_Agile.xlsx`, tableau des 37 livrables en 4 phases |
@@ -31,7 +31,7 @@ Loris, Tobias, Eliott (groupe « PFR IKÉASTRE » sur Teams). Projet académique
 | `06 Atelier brief déconstruit` | Slide de l'atelier (HTML, PDF, PNG) |
 | `07 Agent IA` | Agent de recherche « Fika » : missions vérification + veille, livrables Excel, slides, vidéo. Voir son `LISEZ-MOI.md` |
 | `08 Segmentation` | Segmentation Gen Z (PDF + slides HTML + corpus chiffres/verbatims sourcés) ; `Première version (12-10-2026)` = 1re segmentation du marché IKEA (PPTX + PDF) |
-| `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits |
+| `09 Veille stratégique` | Session 1 du cours Veille stratégique : grille des 8 champs (magasins compacts, angle MARKET). Données dans `veille.json`, `python build.py` régénère Excel + PDF, `python verifier_veille.py` rouvre chaque source et contrôle les extraits. Compléments MARKET : 5 dimensions, réponses aux 5 questions MARKET, plan de veille continue (question → décision) ; `Grille de veille (modèle du cours).xlsx` = la grille du prof remplie |
 | `10 Hypothèses clients` | Fiche d'hypothèses tirées d'avis en ligne (HTML, imprimable), aucune validée : à tester auprès de vrais clients |
 | `Avancement.html` + `avancement.js` | Page d'avancement du projet et ses données |
 | `IKEA - Envoi livrables PFR` | Les livrables PFR envoyés le 23/11/2026 |
